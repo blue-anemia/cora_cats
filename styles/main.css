@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: "Montserrat Medium";
+    font-family: "Montserrat-Medium";
     src: url("../fonts/Montserrat-Medium.ttf");
 }
 
@@ -15,7 +15,7 @@ body {
     font-size: medium;
 }
 
-header {
+.header-menu {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -26,14 +26,13 @@ header {
 .logo {
     margin-right: 30px;
     margin-left: 100px;
-
 }
 
-.header-menu {
+.site-navigation {
     flex-grow: 1;
 }
 
-.header-menu ul {
+.site-navigation {
     display: flex;
     flex-flow: row nowrap;
     margin: 2px 0 0;
@@ -46,56 +45,43 @@ header {
     border-radius: 4px;
 }
 
-.header-menu li {
+.site-navigation li {
     margin-right: 20px;
 }
 
-.header-menu li:last-child {
+.site-navigation li:last-child {
     margin-right: 0;
 }
 
-.header-menu a,
-.header-menu .active {
+.site-navigation a,
+.site-navigation .active {
     display: block;
     padding: 8px 10px;
     text-transform: uppercase;
     letter-spacing: .27em;
 }
 
-.header-menu a {
+.site-navigation a {
     color: #000;
     text-decoration: none;
 }
 
-.header-menu .active {
+.site-navigation.active {
     color: white;
     background-color: #C381D9;
     border-radius: 8px;
 }
 
-.header-menu a:hover {
+.site-navigation a:hover {
     background-color: #C381D9;
     opacity: 80%;
-}
-
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-    .header-menu {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    header-menu a {
-        float: none;
-    }
 }
 
 .search {
     margin-right: 100px;
 }
 
-main {
+.container {
     margin-top: 50px;
     font-family: "Montserrat-Medium";
 }
