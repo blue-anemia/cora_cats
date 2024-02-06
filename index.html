@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="styles/main.css" />
-  <link rel="icon" href="/images/favicon.ico">
+  <link rel="icon" href="/images/favicon.png">
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 
 </head>
@@ -19,13 +19,21 @@
   <header class="main-header">
     <nav class="header-menu">
       <div class="logo">
-        <a>
+        <a href="/">
           <img src="images/logo.png" width="100" alt="Логотип">
         </a>
       </div>
       <ul class="site-navigation">
         <li><a class="active" href="index.html">Обо мне</a></li>
-        <li><a href="cat-owners.html">Котоводам</a></li>
+        <li><a href="cat-owners.html" class="dropdown-menu">Котоводам</a>
+          <ul class="dropdown-content">
+            <li><a href="">Котоводство</a></li>
+            <li><a href="">Котошмот</a></li>
+            <li><a href="">Потеряли кота?</a></li>
+            <hr class="dropdown-line">
+            <li><a href="">Дополнительные материалы</a></li>
+          </ul>
+        </li>
         <li><a href="volunteers.html">Волонтерам</a></li>
         <li><a href="cat-stories.html">Котобайки</a></li>
         <li><a href="donate.html">Поддержать</a></li>
@@ -161,7 +169,7 @@
           <a href="https://www.instagram.com/cora.cats_spb/" target="_blank">Instagram</a>
         </li>
         <li class="contacts-item">
-          <a href="https://wa.me/79213359557" target="_blank">WhatsApp</a>
+          <a href="https://api.whatsapp.com/send?phone=79213359557" target="_blank">WhatsApp</a>
         </li>
       </ul>
       <p>
@@ -204,7 +212,7 @@
       добились определённых успехов, но работы впереди ещё очень и очень много. Зато благодаря Фурье я узнала много
       полезного про антистресс-терапию для пугливых котиков и глубоко окунулась в мир зоопсихологии.</p>
     <p>Подробную историю появления у нас Фурье можно почитать в разделе Котобайки.</p>
-      <span class="modal-close">X</span>
+    <span class="modal-close">X</span>
   </section>
 </body>
 

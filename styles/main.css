@@ -77,6 +77,46 @@ body {
     opacity: 80%;
 }
 
+/* Размещение выпадающего содержимого */
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3C324A;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {
+    background-color: #C381D9;
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.site-navigation .dropdown-menu:hover .dropdown-content {
+    display: block;
+}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown-menu:hover .dropdown-content li {
+    background-color: #C381D9;
+}
+
+
 .search {
     margin-right: 100px;
 }
