@@ -53,15 +53,11 @@ body {
     margin-right: 0;
 }
 
-.site-navigation a,
-.site-navigation .active {
+.site-navigation a {
     display: block;
     padding: 8px 10px;
     text-transform: uppercase;
-    letter-spacing: .27em;
-}
-
-.site-navigation a {
+    letter-spacing: .17em;
     color: #000;
     text-decoration: none;
 }
@@ -72,16 +68,16 @@ body {
     border-radius: 8px;
 }
 
-.site-navigation a:hover {
+.site-navigation li:hover {
     background-color: #C381D9;
-    opacity: 80%;
 }
 
 /* Размещение выпадающего содержимого */
 .dropdown-menu {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    cursor: default;
 }
+
 
 /* Выпадающее содержимое (скрыто по умолчанию) */
 .dropdown-content {
@@ -91,6 +87,11 @@ body {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    /* убираю точки у списка */
+    list-style-type: none;
+    font-size: small;
+    /* убираю отступ слева у элементов выпадающего меню */
+    padding-left: 0;
 }
 
 /* Ссылки внутри выпадающего списка */
@@ -107,7 +108,7 @@ body {
 }
 
 /* Показать выпадающее меню при наведении курсора */
-.site-navigation .dropdown-menu:hover .dropdown-content {
+.site-navigation li:hover>ul {
     display: block;
 }
 
