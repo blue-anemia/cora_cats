@@ -18,6 +18,7 @@ body {
 .header-menu {
     display: flex;
     flex-flow: row nowrap;
+    height: 15%;
     justify-content: flex-start;
     align-items: center;
     background-color: #3C324A;
@@ -64,12 +65,13 @@ body {
 
 .site-navigation.active {
     color: white;
-    background-color: #C381D9;
+    background-color: #98B8A3;
     border-radius: 8px;
 }
 
-.site-navigation li:hover {
-    background-color: #C381D9;
+.site-navigation li:hover,
+.site-navigation li:focus {
+    background-color: #98B8A3;
 }
 
 /* Размещение выпадающего содержимого */
@@ -103,25 +105,76 @@ body {
 }
 
 /* Изменение цвета выпадающих ссылок при наведении курсора */
-.dropdown-content a:hover {
-    background-color: #C381D9;
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    background-color: #98B8A3;
 }
 
 /* Показать выпадающее меню при наведении курсора */
-.site-navigation li:hover>ul {
+.site-navigation li:hover>ul,
+.site-navigation li:focus>ul {
     display: block;
 }
 
 /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
 .dropdown-menu:hover .dropdown-content li {
-    background-color: #C381D9;
+    background-color: #98B8A3;
 }
 
+/* Стили для оформления поиска */
+* {
+    box-sizing: border-box;
+}
 
 .search {
+
+    position: relative;
+    width: 300px;
     margin-right: 100px;
 }
 
+/* тут по айдишнику у input search */
+#search {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #98B8A3;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #98B8A3;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+
+.search-button:hover,
+.search-button:focus {
+    background-color: #9E9C9C;
+}
+
+/* Элемент меняет цвет во время нажатия на доли секунд.  */
+.search-button:active {
+    color: #3C324A;
+}
+
+/* Тут заканчивается оформление стилей для поиска */
 .container {
     margin-top: 50px;
     font-family: "Montserrat-Medium";
