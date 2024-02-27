@@ -3,23 +3,30 @@
     src: url("../fonts/Plovdiv.ttf");
 }
 
-@font-face {
-    font-family: "montserratmedium";
-    src: url("../fonts/montserrat-medium-webfont.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
+a {
+    text-decoration: none
 }
 
 body {
-    background-color: #75466A;
     margin: 0;
-    font-family: "montserratmedium", "Tahoma", sans-serif;
+    padding: 0;
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     font-size: medium;
+    color: black;
+
+
+    background-color: #75466A;
+
 }
 
 .header-menu {
     display: flex;
     flex-flow: row nowrap;
+    /* потом переделать в пиксели высоту хэдера */
     height: 15%;
     justify-content: flex-start;
     align-items: center;
@@ -33,9 +40,6 @@ body {
 
 .site-navigation {
     flex-grow: 1;
-}
-
-.site-navigation {
     display: flex;
     flex-flow: row nowrap;
     margin: 2px 0 0;
@@ -65,15 +69,15 @@ body {
     text-decoration: none;
 }
 
-.site-navigation.active {
-    color: white;
+.active {
     background-color: #98B8A3;
     border-radius: 8px;
 }
 
-.site-navigation li:hover,
-.site-navigation li:focus {
+.site-navigation a:hover,
+.site-navigation a:focus {
     background-color: #98B8A3;
+    border-radius: 8px;
 }
 
 /* Размещение выпадающего содержимого */
@@ -102,7 +106,6 @@ body {
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
-    text-decoration: none;
     display: block;
 }
 
@@ -135,8 +138,7 @@ body {
     margin-right: 100px;
 }
 
-/* тут по айдишнику у input search */
-#search {
+.input-search {
     width: 100%;
     height: 42px;
     padding-left: 10px;
@@ -154,7 +156,7 @@ body {
     width: 42px;
     height: 42px;
     border: none;
-    background: #98B8A3;
+    background: #9E9C9C;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
@@ -168,7 +170,7 @@ body {
 
 .search-button:hover,
 .search-button:focus {
-    background-color: #9E9C9C;
+    background-color: #98B8A3;
 }
 
 /* Элемент меняет цвет во время нажатия на доли секунд.  */
@@ -180,5 +182,4 @@ body {
 
 .container {
     margin-top: 50px;
-    font-family: "Montserrat-Medium";
 }
