@@ -22,28 +22,52 @@ body {
     background-image: linear-gradient(to bottom, #B7C5D0, #DCABC0, #14313F)
 }
 
-.header-menu {
-    display: flex;
-    flex-flow: row nowrap;
-    /* потом переделать в пиксели высоту хэдера */
-    height: 15%;
-    justify-content: flex-start;
-    align-items: center;
-    /* background-color: #3C324A; */
+/* Сеточные стили */
+header {
+    margin-bottom: 75px;
 }
 
-.logo {
+.container {
+
+    width: 1200px;
+    margin: 0 auto;
+    padding 0 10px;
+
+}
+
+.header-menu-wrapper .container {
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.header-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-flow: row nowrap;
+
+}
+
+.header-logo {
     margin-right: 30px;
     margin-left: 100px;
+    /* width: 200px; 
+    height: 155;*/
+
 }
 
 .site-navigation {
     flex-grow: 1;
     display: flex;
     flex-flow: row nowrap;
-    margin: 2px 0 0;
-    margin-left: 150px;
+    white-space: nowrap;
+    margin: 0;
     padding: 0;
+    width: 820px;
+    margin-left: 150px;
     font-family: "Plovdiv Display", "Tahoma", sans-serif;
     font-size: large;
     line-height: 18px;
@@ -179,6 +203,14 @@ body {
 
 /* Тут заканчивается оформление стилей для поиска */
 
-.container {
-    margin-top: 50px;
+.main-footer {
+    margin-top: 65px;
+}
+
+.footer-info {
+    margin: 0;
+}
+
+.footer-copyright {
+    margin: 0;
 }

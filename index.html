@@ -14,44 +14,47 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css" />
   <link rel="icon" href="/images/favicon.png">
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-  <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css"">
+  <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
   <header>
-    <nav class=" header-menu">
-  <div class="logo">
-    <a href="/">
-      <img src="images/logo.png" width="200" alt="Логотип">
-    </a>
-  </div>
-  <ul class="site-navigation">
-    <li><a class="active" href="index.html">Обо мне</a></li>
-    <li><a href="#" class="dropdown-menu">Котоводам</a>
-      <ul class="dropdown-content">
-        <li><a href="cat-owners-book.html">Котоводство</a></li>
-        <li><a href="">Котошмот</a></li>
-        <li><a href="">Потеряли кота?</a></li>
-        <hr class="dropdown-line">
-        <li><a href="">Дополнительные материалы</a></li>
-      </ul>
-    </li>
-    <li><a href="#" class="dropdown-menu">Волонтерам</a>
-      <ul class="dropdown-content">
-        <li><a href="found-cat.html">Нашли кота?</a></li>
-        <li><a href="">Пиар и пристройство</a></li>
-        <li><a href="">Адаптация и лечение</a></li>
-        <li><a href="">Стерилизация диких кошек</a></li>
-      </ul>
-    </li>
-    <li><a href="cat-stories.html">Котобайки</a></li>
-    <li><a href="donate.html">Поддержать</a></li>
-  </ul>
-  <form class="search" method="get">
-    <input class="input-search" name="search" placeholder="Что ищем?" id="search" required minlength="2" maxlength="10">
-    <button class="fa search-button" type="submit" aria-label="Кнопка поиска"></button>
-  </form>
-  </nav>
+    <div class="header-menu-wrapper">
+      <nav class="header-menu">
+        <a class="header-logo" href="/">
+          <img src="images/logo.png" width="200" alt="Логотип">
+        </a>
+        <div class="container">
+          <ul class="site-navigation">
+            <li><a class="active" href="index.html">Обо мне</a></li>
+            <li><a href="#" class="dropdown-menu">Котоводам</a>
+              <ul class="dropdown-content">
+                <li><a href="cat-owners-book.html">Котоводство</a></li>
+                <li><a href="">Котошмот</a></li>
+                <li><a href="">Потеряли кота?</a></li>
+                <hr class="dropdown-line">
+                <li><a href="">Дополнительные материалы</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="dropdown-menu">Волонтерам</a>
+              <ul class="dropdown-content">
+                <li><a href="found-cat.html">Нашли кота?</a></li>
+                <li><a href="">Пиар и пристройство</a></li>
+                <li><a href="">Адаптация и лечение</a></li>
+                <li><a href="">Стерилизация диких кошек</a></li>
+              </ul>
+            </li>
+            <li><a href="cat-stories.html">Котобайки</a></li>
+            <li><a href="donate.html">Поддержать</a></li>
+          </ul>
+        </div>
+        <form class="search" method="get">
+          <input class="input-search" name="search" placeholder="Что ищем?" id="search" required minlength="2"
+            maxlength="10">
+          <button class="fa search-button" type="submit" aria-label="Кнопка поиска"></button>
+        </form>
+      </nav>
+    </div>
   </header>
   <main class="container">
     <h1 class="visually-hidden">Cora Cats<br>Каждому коту нужен дом!</h1>
@@ -212,7 +215,6 @@
         котиков, в
         комментариях можно посмотреть фотографии из нового дома.<br>
         Также можно искать посты по хештегу <b>#coracats_ИщетДом.</b></p>
-      p><b>Инстаграм:</b> в актуальном с сиреневой подписью <b>"Ищет дом"</b> и по хештегу <b>#coracats_ИщетДом.</b>
       </p>
       <p><strong>На март 2023 года мы с мужем пристроили 150 звериков.</strong></p>
       </p>
@@ -265,6 +267,6 @@
     <h2>Название модалки</h2>
     <button class="modal-close" type="button">Закрыть</span>
   </section>
-  </body>
+</body>
 
 </html>
