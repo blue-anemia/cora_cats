@@ -22,6 +22,11 @@ body {
     background-image: linear-gradient(to bottom, #BFC6CC, #C894A0, #31405F)
 }
 
+/* img {
+    max-width: 100%;
+    height: auto;
+} */
+
 /* Сеточные стили */
 
 html,
@@ -71,13 +76,14 @@ header {
 }
 
 .site-navigation {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     display: flex;
-    flex-flow: row nowrap;
+    flex-wrap: wrap;
+    /* flex-flow: row nowrap; */
     white-space: nowrap;
     margin: 0;
     padding: 0;
-    width: 820px;
+    width: 920px;
     margin-left: 150px;
     font-family: "Plovdiv Display", "Tahoma", sans-serif;
     font-size: large;
@@ -168,7 +174,7 @@ header {
 .search {
 
     position: relative;
-    width: 300px;
+    min-width: 300px;
     margin-right: 70px;
     margin-left: auto;
 }
