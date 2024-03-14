@@ -45,7 +45,7 @@ header {
 
 .container {
 
-    width: 1200px;
+    width: 1500px;
     margin: 0 auto;
     padding: 0 10px;
 
@@ -225,6 +225,48 @@ header {
     padding: 0;
     margin: 0;
     margin-bottom: 50px;
+}
+
+.my-activity {
+    color: white;
+    text-align: center;
+    text-shadow: 1px -2px 3px black;
+}
+
+.about-me-list {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #C1B7BE, #FEFCFD);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.about-me-list li {
+    list-style: none;
+    padding: 5px 10px;
+    flex-basis: auto;
+    width: 33.33%;
+
+}
+
+.about-me-item {
+    font-size: large;
+}
+
+.about-me-item h3 {
+    text-align: center;
+}
+
+.about-me-item h3::after {
+    content: "✔";
+    position: absolute;
+    bottom: 150px;
+    margin-left: -170px;
 }
 
 .main-footer {
