@@ -376,31 +376,64 @@ summary {
 
 .footer-info {
     margin: 0;
-    margin-right: 80px;
+}
+
+.footer-info b {
+    display: block;
+    margin-bottom: 15px;
 }
 
 .footer-info a {
     color: #000;
 }
 
+.footer-icon {}
+
+.footer-social {
+    text-align: center;
+    width: 145px;
+}
+
+.footer-social b {
+    display: block;
+    margin-bottom: 15px;
+}
 
 .footer-social ul {
     display: flex;
-
+    justify-content: space-between;
+    width: 141px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .footer-social a {
-    color: #000;
+    color: black;
 }
 
 .footer-social li {
     list-style: none;
-    padding-right: 15px;
+}
+
+.footer-social li:hover,
+.footer-social li:focus {
+    background-color: white;
 }
 
 .footer-copyright {
-
+    width: 150px;
     margin: 0;
+    text-align: center;
+}
+
+.footer-copyright b {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-copyright .poweredby {
+    display: block;
+    margin-right: 0;
 }
 
 .visually-hidden {
