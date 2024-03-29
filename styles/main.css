@@ -18,7 +18,7 @@ body {
     color: black;
 
 
-    background-image: linear-gradient(to bottom, #A4BAA3, #AB9BBF, #8478B6)
+    background-image: linear-gradient(to bottom, #b59cd6, #d4c9ec, #778b6d)
 }
 
 /* img {
@@ -63,7 +63,7 @@ header {
     flex-direction: column;
     align-items: center;
     flex-flow: row nowrap;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 .header-logo {
@@ -125,6 +125,17 @@ header {
     cursor: default;
 }
 
+.dropdown-menu::after {
+    content: "";
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
 
 /* Выпадающее содержимое (скрыто по умолчанию) */
 .dropdown-content {
@@ -185,7 +196,7 @@ header {
     border: 2px solid #D7CEE1;
     border-radius: 5px;
     outline: none;
-    background: #F9F0DA;
+    background: white;
     color: black;
 }
 
@@ -320,7 +331,7 @@ summary {
 
 .about-me-list li {
     list-style: none;
-    padding: 5px 10px;
+    padding: 5px 55px;
     flex-basis: auto;
     width: 33.33%;
 
@@ -337,7 +348,7 @@ summary {
 }
 
 .about-me-item h3::after {
-    content: "✔";
+    content: url('../images/paws.png');
     position: absolute;
     bottom: 150px;
     margin-left: -170px;
@@ -359,6 +370,14 @@ summary {
 
 .my-cats-galley img {
     width: 350px;
+}
+
+.take-cat-item {
+    list-style: none;
+}
+
+.take-cat-item::before {
+    content: url(../images/cat-guarantee-icon.png);
 }
 
 .main-footer {
@@ -417,7 +436,8 @@ summary {
 
 .footer-social li:hover,
 .footer-social li:focus {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15%;
 }
 
 .footer-copyright {
@@ -434,6 +454,14 @@ summary {
 .footer-copyright .poweredby {
     display: block;
     margin-right: 0;
+    border: #000 1px solid;
+    border-radius: 15px;
+    color: #000;
+}
+
+.poweredby:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
 }
 
 .visually-hidden {
