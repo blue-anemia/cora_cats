@@ -193,11 +193,15 @@ header {
     width: 100%;
     height: 42px;
     padding-left: 10px;
-    border: 2px solid #D7CEE1;
+    border: 2px solid #9E9C9C;
     border-radius: 5px;
     outline: none;
     background: white;
     color: black;
+}
+
+.input-search:focus {
+    border-color: #D7CEE1;
 }
 
 .search-button {
@@ -380,6 +384,70 @@ summary {
     content: url(../images/cat-guarantee-icon.png);
 }
 
+/* Всплывающая форма (модалка) */
+
+.modal {
+    position: fixed;
+
+    color: #000000;
+
+    background-color: #f8f3f0;
+    background-image: url("");
+    background-position: 0 0;
+    background-repeat: repeat;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-cats {
+    top: 120px;
+    left: 50%;
+
+    /* display: none; */
+
+    width: 300px;
+    margin-left: -230px;
+    padding: 50px 80px;
+    transform: translate(-50% -50%);
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+
+    width: 22px;
+    height: 22px;
+
+    font-size: 0;
+
+    background-color: transparent;
+    border: 0;
+
+    cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: "";
+
+    position: absolute;
+    top: 10px;
+    left: 2px;
+
+    width: 19px;
+    height: 3px;
+
+    background-color: #d0d0d0;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
 .main-footer {
     margin-top: 65px;
     padding: 60px 0;
@@ -405,8 +473,6 @@ summary {
 .footer-info a {
     color: #000;
 }
-
-.footer-icon {}
 
 .footer-social {
     text-align: center;
