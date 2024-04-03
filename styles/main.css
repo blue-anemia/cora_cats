@@ -4,7 +4,7 @@
 }
 
 a {
-    text-decoration: none
+    text-decoration: none;
 }
 
 body {
@@ -109,9 +109,12 @@ header {
 }
 
 .active {
+
     background-color: #D7CEE1;
     border-radius: 8px;
+    cursor: default;
 }
+
 
 .site-navigation a:hover,
 .site-navigation a:focus {
