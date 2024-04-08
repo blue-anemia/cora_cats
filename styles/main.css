@@ -21,10 +21,12 @@ body {
     background-image: linear-gradient(to bottom, #b59cd6, #d4c9ec, #778b6d)
 }
 
-/* img {
+/* это нужно чтобы картинки вставали по размеру и не выпадали - защищает
+выпадение картинки из родительского по ширине блока*/
+img {
     max-width: 100%;
     height: auto;
-} */
+}
 
 /* Сеточные стили */
 
@@ -386,6 +388,130 @@ summary {
 .take-cat-item::before {
     content: url(../images/cat-guarantee-icon.png);
 }
+
+/* здесь стилизую заголовок-слоган для внутренних страниц */
+.inner-content-donate .big-heading {
+    display: flex;
+    align-items: center;
+
+    margin-top: 55px;
+    margin-bottom: 65px;
+
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.big-heading::before,
+.big-heading::after {
+    content: "";
+
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 2px;
+
+    background: #000000;
+}
+
+.big-heading::before {
+    margin-right: 25px;
+}
+
+.big-heading::after {
+    margin-left: 25px;
+}
+
+/* конец стилизации слогана */
+
+
+
+.inner-content-donate table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.inner-content-donate td {
+    padding: 10px 15px;
+    border: 2px solid black;
+    width: 50%;
+}
+
+.inner-content-donate td:last-child {
+    text-align: center;
+}
+
+.inner-columns {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 60px 0;
+}
+
+.inner-column-left,
+.inner-column-right {
+    width: 700px;
+}
+
+/* * - значит любой первый элемент */
+
+.inner-column-left *:first-child,
+.inner-column-right *:first-child {
+    margin-top: 0;
+}
+
+/* кнопка для копирования номера карты */
+.copy-number {
+    width: 100px;
+    height: 24px;
+    background: #fff;
+    border: none;
+    font: inherit;
+    font-weight: 500;
+    border-radius: 16px;
+    overflow: hidden;
+    transition-duration: 700ms;
+    cursor: pointer;
+}
+
+.copy-number span:first-child {
+    color: #257cff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.copy-number span:last-child {
+    color: #fff;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(150%) translateX(-50%);
+    height: 22px;
+    line-height: 20px;
+}
+
+.copy-number:focus {
+    background-color: #40c606;
+    width: 120px;
+    height: 30px;
+    transition-duration: 500ms;
+    transition-delay: 50ms;
+
+}
+
+.copy-number:focus span:first-child {
+    opacity: 0;
+    transform: translateY(150%) translateX(-200%);
+}
+
+.copy-number:focus span:last-child {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
+    transition-duration: 300ms;
+    transition-delay: 300ms;
+}
+
+/* конец оформления кнопки */
 
 /* Всплывающая форма (модалка) */
 
