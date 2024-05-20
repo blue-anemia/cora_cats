@@ -625,6 +625,29 @@ summary {
 
 /* конец оформления кнопки */
 
+/* стили для страницы котоводство */
+.kotovodstvo-text {
+    padding: 30px;
+    font-size: 20px;
+    flex: none;
+    width: 1030px;
+    font-size: 180%;
+}
+
+.kotovodstvo-photo {}
+
+.kotovodstvo-container {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.kotovodstvo-container p {
+    padding: 30px;
+}
+
 /* Всплывающая форма (модалка) */
 
 .modal {
