@@ -502,7 +502,7 @@ summary {
 
 
 /* здесь стилизую заголовок-слоган для внутренних страниц */
-.inner-content-donate .big-heading {
+.inner-content .big-heading {
     display: flex;
     align-items: center;
 
@@ -539,18 +539,18 @@ summary {
 
 
 
-.inner-content-donate table {
+.inner-content table {
     border-collapse: collapse;
     width: 100%;
 }
 
-.inner-content-donate td {
+.inner-content td {
     padding: 10px 15px;
     border: 2px solid black;
     width: 50%;
 }
 
-.inner-content-donate td:last-child {
+.inner-content td:last-child {
     text-align: center;
 }
 
@@ -647,6 +647,8 @@ summary {
     margin: 0;
     margin-top: 50px;
     padding: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background: linear-gradient(to top, #D4B3E0, #FEFCFD);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -684,7 +686,41 @@ summary {
 
 .presentation-pdf {
     padding-left: 30px;
+}
 
+/* конец стилизации страницы "Котоводство"*/
+
+/* Начало стилизации страницы "Котошмот" */
+.cat-items-text {
+    padding: 30px;
+    font-size: 20px;
+    flex: none;
+    width: 1030px;
+    font-size: 180%;
+}
+
+.cat-items-info {
+    flex: none;
+    padding-left: 30px;
+    padding-top: 190px;
+    width: 68%;
+    font-size: 130%;
+    position: absolute;
+}
+
+.cat-items-photo {
+    margin-left: auto;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 350px;
+    flex: none;
+}
+
+.cat-items-pdf {
+    padding-left: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* Всплывающая форма (модалка) */
