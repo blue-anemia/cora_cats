@@ -691,8 +691,19 @@ summary {
 /* конец стилизации страницы "Котоводство"*/
 
 /* Начало стилизации страницы "Котошмот" */
+.cat-items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
 .cat-items-text {
-    padding: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
     font-size: 20px;
     flex: none;
     width: 1030px;
@@ -700,21 +711,21 @@ summary {
 }
 
 .cat-items-info {
-    flex: none;
     padding-left: 30px;
-    padding-top: 190px;
     width: 68%;
     font-size: 130%;
-    position: absolute;
+
 }
 
 .cat-items-photo {
+    align-self: stretch;
     margin-left: auto;
     border-radius: 10px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     width: 350px;
-    flex: none;
+
+
 }
 
 .table-container {
