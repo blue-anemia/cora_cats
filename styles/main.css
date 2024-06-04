@@ -703,10 +703,8 @@ summary {
 
 .cat-items-text {
     padding-top: 30px;
-    padding-left: 30px;
     font-size: 20px;
     flex: none;
-    width: 1030px;
     font-size: 180%;
 }
 
@@ -718,7 +716,6 @@ summary {
 }
 
 .cat-items-photo {
-    align-self: stretch;
     margin-left: auto;
     border-radius: 10px;
     border-top-left-radius: 0;
@@ -740,6 +737,45 @@ summary {
     border-collapse: collapse;
     width: 100%;
     display: block;
+}
+
+.table-cat-items img {
+    width: 400px;
+    height: 400px;
+}
+
+/* Конец стилизации страницы "Котошмот" */
+
+/* Начало стилизации страницы "Потеряли кота" */
+.lost-cat-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.lost-cat-info {
+    padding-left: 30px;
+    width: 68%;
+    font-size: 130%;
+}
+
+.lost-cat-photo {
+    margin-left: auto;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 350px;
+}
+
+.lost-cat {
+    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    padding: 30px;
 }
 
 /* Всплывающая форма (модалка) */
