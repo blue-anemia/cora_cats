@@ -919,6 +919,7 @@
                 </table>
             </div>
         </section>
+        <a href="#" class="scroll-to-top">&#8593;</a>
     </main>
     <footer class="main-footer">
         <div class="container">
@@ -953,6 +954,19 @@
             </p>
         </div>
     </footer>
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.pageYOffset;
+            var scrollThreshold = 200; // Порог прокрутки, при котором появляется кнопка
+
+            var scrollButton = document.querySelector('.scroll-to-top');
+            if (scrollPosition > scrollThreshold) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 
 </html>
