@@ -800,7 +800,6 @@ summary {
 
 .window-cat-text {
     padding-top: 30px;
-    font-size: 20px;
     flex: none;
     font-size: 180%;
 }
@@ -855,7 +854,7 @@ summary {
 
 /*Конец стилизации "Доп материалы" */
 
-/*YНачало стилизации "Нашли кота"*/
+/*Начало стилизации "Нашли кота"*/
 
 .article-container {
     background: linear-gradient(to top, #D4B3E0, #FEFCFD);
@@ -865,6 +864,13 @@ summary {
     padding: 30px;
 }
 
+/*Начало стилизации "Пиар и пристройство*/
+
+.inner-page-text {
+    padding-top: 30px;
+    flex: none;
+    font-size: 150%;
+}
 
 /* Всплывающая форма (модалка) */
 
