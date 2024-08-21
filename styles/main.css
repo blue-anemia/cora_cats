@@ -137,6 +137,7 @@ header {
 .dropdown-menu {
     display: flex;
     cursor: default;
+    position: relative;
 }
 
 .dropdown-menu::after {
@@ -149,13 +150,16 @@ header {
     margin-left: 3px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    transition: transform 0.2s;
+    /* Плавная анимация вращения */
+    vertical-align: middle;
 }
 
 /* Выпадающее содержимое (скрыто по умолчанию) */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #743B8A;
+    background-color: #9D6EAF;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -180,14 +184,34 @@ header {
 }
 
 /* Показать выпадающее меню при наведении курсора */
-.site-navigation li:hover>ul,
-.site-navigation li:focus>ul {
+.site-navigation li:hover>.dropdown-content,
+.site-navigation li:focus>.dropdown-content {
     display: block;
+}
+
+/* Изменение направления стрелки при раскрытии меню */
+.site-navigation li:hover>.dropdown-menu::after,
+.site-navigation li:focus>.dropdown-menu::after,
+.site-navigation li.active>.dropdown-menu::after {
+    /* Добавлен активный класс */
+    transform: rotate(-135deg);
+    /* Поворот на 180 градусов */
 }
 
 /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
 .dropdown-menu:hover .dropdown-content li {
     background-color: #D4B3E0;
+}
+
+/* Стили для активного состояния */
+.site-navigation li.active>a {
+    background-color: #D7CEE1;
+    border-radius: 8px;
+}
+
+.site-navigation li.active>.dropdown-menu::after {
+    transform: rotate(-135deg);
+    /* Оставляем стрелку повёрнутой вверх */
 }
 
 /* Стили для оформления поиска */
@@ -489,7 +513,7 @@ summary {
 
 
 /* здесь стилизую заголовок-слоган для внутренних страниц */
-.inner-content .big-heading {
+.big-heading {
     display: flex;
     align-items: center;
 
@@ -501,6 +525,9 @@ summary {
     text-align: center;
     color: white;
     text-shadow: 2px -2px 3px black;
+
+    font-family: "Plovdiv Display", "Tahoma", sans-serif;
+    letter-spacing: .10em;
 }
 
 .big-heading::before,
