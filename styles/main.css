@@ -554,7 +554,31 @@ summary {
 
 /* конец стилизации слогана */
 
+/* Стилизация внутренних страниц*/
 
+.info-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.page-info {
+    padding-left: 30px;
+    width: 68%;
+    font-size: 130%;
+}
+
+.inner-page-photo {
+    margin-left: auto;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 350px;
+}
 
 .inner-content table {
     border-collapse: collapse;
@@ -708,38 +732,11 @@ summary {
 /* конец стилизации страницы "Котоводство"*/
 
 /* Начало стилизации страницы "Котошмот" */
-.cat-items-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
 .cat-items-text {
     padding-top: 30px;
     font-size: 20px;
     flex: none;
     font-size: 180%;
-}
-
-.cat-items-info {
-    padding-left: 30px;
-    width: 68%;
-    font-size: 130%;
-
-}
-
-.cat-items-photo {
-    margin-left: auto;
-    border-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    width: 350px;
-
-
 }
 
 .table-container {
@@ -785,80 +782,27 @@ summary {
 /* Конец стилизации страницы "Котошмот" */
 
 /* Начало стилизации страницы "Потеряли кота" */
-.lost-cat-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
 
-.lost-cat-info {
-    padding-left: 30px;
-    width: 68%;
-    font-size: 130%;
-}
-
-.lost-cat-photo {
-    margin-left: auto;
-    border-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    width: 350px;
-}
-
-.lost-cat {
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-top: 30px;
-    padding: 30px;
-}
-
-.lost-cat a {
+.article-container a {
     color: #000;
     font-weight: bold;
     text-decoration: underline dotted black;
     text-decoration-thickness: 1px;
 }
 
-.lost-cat a:hover {
+.article-container a:hover {
     border-bottom: 1px solid;
     background: #758E29;
 }
 
 /* Конец стилизации "Потеряли кота" */
 /* Начало стилизации "Доп материалы" */
-.additional-info-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.window-cat-info {
-    flex: none;
-    padding-left: 30px;
-    width: 68%;
-    font-size: 130%
-}
 
 .window-cat-text {
     padding-top: 30px;
     font-size: 20px;
     flex: none;
     font-size: 180%;
-}
-
-.window-cat-photo {
-    margin-left: auto;
-    border-top-right-radius: 10px;
-    width: 350px;
 }
 
 .additional-info-heading {
@@ -899,55 +843,27 @@ summary {
     background: #758E29;
 }
 
-.cat-water {
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-top: 30px;
-    padding: 30px;
-}
-
-.cat-water li {
+.article-container li {
 
     margin-bottom: 8px;
 }
 
-.cat-water a {
+.article-container a {
     color: #000;
     font-weight: bold;
 }
-
-.cat-water a:hover {
-    border-bottom: 1px solid;
-    background: #758E29;
-}
-
-.urine-analysis {
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-top: 30px;
-    padding: 30px;
-}
-
-.urine-analysis li {
-    margin-bottom: 8px;
-}
-
-.urine-analysis a {
-    color: #000;
-    font-weight: bold;
-}
-
-.urine-analysis a:hover {
-    border-bottom: 1px solid;
-    background: #758E29;
-}
-
-
-
 
 /*Конец стилизации "Доп материалы" */
+
+/*YНачало стилизации "Нашли кота"*/
+
+.article-container {
+    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 30px;
+}
 
 
 /* Всплывающая форма (модалка) */
