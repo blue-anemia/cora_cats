@@ -15,7 +15,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    color: black;
+    color: #333333;
 
 
     background-image: linear-gradient(to bottom, #743B8A, #D4B3E0, #748D27)
@@ -493,13 +493,13 @@ summary {
 }
 
 .take-cat a {
-    color: #000;
+    color: #6a1b9a;
     font-weight: bold;
 }
 
 .take-cat a:hover {
-    border-bottom: 1px solid;
-    background: #758E29;
+    color: #388e3c;
+    text-decoration: underline;
 }
 
 .take-cat-item {
@@ -572,6 +572,16 @@ summary {
     font-size: 130%;
 }
 
+.page-info a {
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+.page-info a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
 .inner-page-photo {
     margin-left: auto;
     border-radius: 10px;
@@ -629,7 +639,7 @@ summary {
 }
 
 .copy-number span:first-child {
-    color: #257cff;
+    color: #6a1b9a;
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -759,40 +769,27 @@ summary {
 }
 
 .table-cat-items a {
-    color: #000;
+    color: #6a1b9a;
     font-weight: bold;
 }
 
 .table-cat-items a:hover {
-    border-bottom: 1px solid;
-    background: #758E29;
+    color: #388e3c;
+    text-decoration: underline;
 }
-
-.cat-items-info a {
-    color: #000;
-    font-weight: bold;
-}
-
-.cat-items-info a:hover {
-    border-bottom: 1px solid;
-    background: #758E29;
-}
-
 
 /* Конец стилизации страницы "Котошмот" */
 
 /* Начало стилизации страницы "Потеряли кота" */
 
 .article-container a {
-    color: #000;
+    color: #6a1b9a;
     font-weight: bold;
-    text-decoration: underline dotted black;
-    text-decoration-thickness: 1px;
 }
 
 .article-container a:hover {
-    border-bottom: 1px solid;
-    background: #758E29;
+    color: #388e3c;
+    text-decoration: underline;
 }
 
 /* Конец стилизации "Потеряли кота" */
@@ -833,13 +830,13 @@ summary {
 }
 
 .window-cat a {
-    color: #000;
+    color: #6a1b9a;
     font-weight: bold;
 }
 
 .window-cat a:hover {
-    border-bottom: 1px solid;
-    background: #758E29;
+    color: #388e3c;
+    text-decoration: underline;
 }
 
 .article-container li {
@@ -848,7 +845,7 @@ summary {
 }
 
 .article-container a {
-    color: #000;
+    color: #6a1b9a;
     font-weight: bold;
 }
 
