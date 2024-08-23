@@ -7,6 +7,15 @@ a {
     text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #2f4f4f;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -17,8 +26,29 @@ body {
     font-style: normal;
     color: #333333;
 
+    background-color: #AE84BE;
 
-    background-image: linear-gradient(to bottom, #743B8A, #D4B3E0, #748D27)
+    /* Градиент, заданный с использованием процентов */
+    background: linear-gradient(to bottom,
+            #743B8A 0%,
+            /* Цвет внизу страницы (начинается с 0%) */
+            #D4B3E0 40%,
+            /* Переходный цвет (например, 40%) */
+            #748D27 100%
+            /* Цвет вверху страницы (до 100%) */
+        );
+
+    /* Резервный вариант для старых браузеров, которые не поддерживают градиенты */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Чтобы градиент оставался фиксированным при прокрутке */
+    background-size: cover;
+    /* Покрытие всей области экрана */
+    min-height: 100vh;
+    /* Минимальная высота страницы */
+    margin: 0;
+
+
 }
 
 * {
@@ -37,6 +67,7 @@ img {
     height: auto;
 }
 
+
 /* Сеточные стили */
 
 html,
@@ -51,6 +82,10 @@ header {
 
 .inner-page .header {
     margin-bottom: 50px;
+}
+
+.page-title {
+    color: #333333;
 }
 
 .container {
@@ -277,6 +312,7 @@ header {
     margin: 0;
     margin-bottom: 50px;
     list-style: none;
+    color: black;
 }
 
 .breadcrumbs a {
@@ -358,6 +394,10 @@ header {
     padding-left: 30px;
     padding-bottom: 30px;
     font-size: 120%;
+}
+
+.cora-more p {
+    line-height: 1.4;
 }
 
 summary {
@@ -448,6 +488,10 @@ summary {
 
 }
 
+.my-cats-gallery p {
+    line-height: 1.6;
+}
+
 .container-photo-cats {
     display: flex;
     flex-direction: row;
@@ -508,6 +552,10 @@ summary {
 
 .take-cat-item::before {
     content: url(../images/cat-guarantee-icon.png);
+}
+
+.take-cat p {
+    line-height: 1.6;
 }
 
 
@@ -815,6 +863,10 @@ summary {
     padding: 30px;
 }
 
+.window-cat p {
+    line-height: 1.6;
+}
+
 .window-cat-text {
     line-height: 3.5;
 }
@@ -837,6 +889,10 @@ summary {
 .window-cat a:hover {
     color: #388e3c;
     text-decoration: underline;
+}
+
+.article-container p {
+    line-height: 1.6;
 }
 
 .article-container li {
