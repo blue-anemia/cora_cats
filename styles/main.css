@@ -46,7 +46,6 @@ body {
     /* Покрытие всей области экрана */
     min-height: 100vh;
     /* Минимальная высота страницы */
-    margin: 0;
 
 
 }
@@ -72,8 +71,10 @@ img {
 
 html,
 body {
-    min-width: 1122px;
-    min-height: 1150px;
+    min-width: 320px;
+    /* Минимум для мобильных устройств */
+    min-height: 100vh;
+    /* Минимальная высота равна высоте экрана */
 }
 
 header {
@@ -1111,4 +1112,49 @@ summary {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+/* Стили для страницы 404 */
+.error-container {
+    padding: 20px;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.error-container h1 {
+    font-size: 72px;
+    margin: 0;
+    color: #333333;
+}
+
+.error-container h2 {
+    font-size: 24px;
+    color: #333333;
+}
+
+.error-container p {
+    font-size: 18px;
+    color: #333333;
+    margin: 20px 0;
+}
+
+.error-home-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #AF9CA9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.error-home-button:hover {
+    background-color: #8a7280;
+}
+
+.error-cat-icon {
+    font-size: 50px;
+    color: #AF9CA9;
 }
