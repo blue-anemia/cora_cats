@@ -60,6 +60,8 @@ html,
 body {
     min-width: 320px;
     /* Минимальная ширина для мобильных устройств */
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -76,7 +78,7 @@ header {
 }
 
 .container {
-
+    flex-grow: 1;
     width: 1500px;
     margin: 0 auto;
     padding: 0 10px;
