@@ -1101,11 +1101,17 @@ summary {
 }
 
 /* Стили для страницы 404 */
+.inner-page .error-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
 .error-container {
     padding: 20px;
     text-align: center;
-    height: 100vh;
-    margin: 0;
 }
 
 .error-container h1 {
