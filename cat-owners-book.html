@@ -136,31 +136,7 @@
             </p>
         </div>
     </footer>
-    <script>
-        // Показываем/скрываем кнопку "наверх" при прокрутке
-        window.addEventListener('scroll', function () {
-            var scrollToTopBtn = document.querySelector('.scroll-to-top');
-            if (window.scrollY > 300) { // Порог прокрутки, при котором появляется кнопка
-                scrollToTopBtn.style.display = 'block';
-            } else {
-                scrollToTopBtn.style.display = 'none';
-            }
-        });
-
-        // Делаем плавный скролл при клике на кнопку "наверх"
-        document.querySelector('.scroll-to-top').addEventListener('click', function (e) {
-            e.preventDefault(); // Отменяем стандартное поведение ссылки
-            var scrollDuration = 500; // Продолжительность анимации в миллисекундах
-            var scrollStep = -window.scrollY / (scrollDuration / 15);
-            var scrollInterval = setInterval(function () {
-                if (window.scrollY > 0) {
-                    window.scrollBy(0, scrollStep);
-                } else {
-                    clearInterval(scrollInterval);
-                }
-            }, 15);
-        });
-    </script>
+    <script src="/js/scripts.js"></script>
 </body>
 
 </html>
