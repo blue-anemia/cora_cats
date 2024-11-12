@@ -781,7 +781,7 @@ summary {
     padding-right: 20px;
 }
 
-.kotovodstvo-info strong {
+.kotovodstvo-info span {
     color: #6a1b9a;
     font-weight: bold;
     background-color: rgba(255, 235, 255, 0.3);
@@ -840,24 +840,78 @@ summary {
     padding-left: 30px;
 }
 
-.kotovodstvo-pdf {
+.important-points {
     padding-left: 30px;
 }
 
-.lection-text {
-    font-size: 180%;
+.important-points h2 {
+    color: #6a1b9a;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.important-points ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1em;
+    color: #4a4a4a;
+}
+
+.important-points li {
+    margin-bottom: 10px;
+}
+
+.pdf-download {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pdf-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #AF9CA9;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pdf-button:hover {
+    background-color: #8a7280;
+}
+
+.lection-text,
+.presentation-text {
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .video-lection {
-    padding-left: 30px;
+    text-align: center;
+    margin-top: 15px;
 }
 
-.presentation-text {
-    font-size: 180%;
-}
+@media (max-width: 768px) {
+    .kotovodstvo-container {
+        text-align: center;
+    }
 
-.presentation-pdf {
-    padding-left: 30px;
+    .important-points {
+        padding: 15px;
+    }
+
+    .pdf-button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .video-lection iframe {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* конец стилизации страницы "Котоводство"*/
