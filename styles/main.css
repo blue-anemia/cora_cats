@@ -400,12 +400,11 @@ header {
 
 /* Стиль фото */
 .home-cora-photo {
-    width: 450px;
-    max-width: 40%;
     border-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-left: 20px;
+    width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Добавляем лёгкую тень */
+    margin-bottom: 20px;
 }
 
 /* Стиль для блока с раскрывающимся текстом */
@@ -422,18 +421,41 @@ header {
 
 .home-cora-more p {
     line-height: 1.4;
+    margin-top: 10px;
+    padding: 20px 0;
+    /* Убираем боковые отступы, чтобы текст "сливался" с подложкой */
+
 }
 
 .home-cora-more summary {
-    padding-bottom: 5px;
-    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
     cursor: pointer;
-    border: white solid 1px;
-    border-radius: 5px;
-    width: 150px;
+    border: none;
+    border-radius: 12px;
     background-color: #A87CB9;
-    font-weight: bold;
     color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Тень для текста */
+}
+
+.home-cora-more summary:hover {
+    background-color: #8A5CA2;
+    /* Более тёмный оттенок при наведении */
+}
+
+.paw-icon {
+    margin-right: 8px;
+    font-size: 20px;
+    /* Размер иконки лапки */
 }
 
 /* Мобильная версия */
