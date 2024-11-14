@@ -63,3 +63,45 @@ document.addEventListener("DOMContentLoaded", function () {
     siteNavigation.classList.toggle("active");
   });
 });
+
+// Функция открытия модального окна
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+// Функция закрытия модального окна
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+// Закрытие модального окна при клике вне его области
+window.onclick = function (event) {
+  const modals = document.getElementsByClassName("modal");
+  for (let i = 0; i < modals.length; i++) {
+    if (event.target == modals[i]) {
+      modals[i].style.display = "none";
+    }
+  }
+};
+
+// Функции для слайдера
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("slide");
+  if (n >= slides.length) {
+    slideIndex = 0;
+  }
+  if (n < 0) {
+    slideIndex = slides.length - 1;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex].style.display = "block";
+}

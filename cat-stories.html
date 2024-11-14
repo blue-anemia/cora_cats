@@ -57,11 +57,39 @@
             <li><a href="index.html">На главную</a></li>
             <li class="breadcrumbs-current">Котобайки</li>
         </ul>
+        <section class="story-container">
+            <article class="story-card">
+                <img class="story-image" src="cat-photo1.jpg" alt="Фото кота">
+                <div class="story-content">
+                    <h3>История спасения Мурзика</h3>
+                    <p>Краткий текст истории о том, как Мурзик оказался на улице...</p>
+                    <button class="read-more-btn" onclick="openModal('story1')">
+                        <i class="fas fa-paw"></i> Читать полностью
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <!-- Модальное окно -->
+        <div id="story1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('story1')">&times;</span>
+                <div class="modal-story">
+                    <h3>История спасения Мурзика</h3>
+                    <div class="slider">
+                        <img class="slide" src="cat-photo1.jpg" alt="Фото кота 1">
+                        <img class="slide" src="cat-photo2.jpg" alt="Фото кота 2" style="display:none;">
+                        <img class="slide" src="cat-photo3.jpg" alt="Фото кота 3" style="display:none;">
+                        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+                    </div>
+                    <p>Полный текст истории о том, как Мурзик оказался на улице и каким образом его спасли...</p>
+                </div>
+            </div>
+        </div>
+
         <a href="#" class="scroll-to-top">&#8593;</a>
     </main>
-    <aside>
-        Боковая колонка (сайдбар)
-    </aside>
     <footer class="main-footer">
         <div class="container">
             <p class="footer-info">
@@ -95,11 +123,6 @@
             </p>
         </div>
     </footer>
-    <!-- Модалки  -->
-    <section class="modal modal-cats">
-        <h2>Название модалки</h2>
-        <button class="modal-close" type="button">Закрыть</span>
-    </section>
     <script src="/js/scripts.js"></script>
 </body>
 
