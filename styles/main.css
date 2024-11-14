@@ -368,36 +368,63 @@ header {
     /* Отступ снизу */
 }
 
-.cora-photo {
+.home-cora-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Блок с текстом и фото на одной линии */
+.home-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    /* Ограничим ширину контейнера */
+    margin-bottom: 20px;
+}
+
+/* Стиль текста */
+.home-about-me-text {
+    padding: 30px;
+    font-size: 180%;
+    flex: 1;
+    max-width: 50%;
+    color: #333;
+}
+
+/* Стиль фото */
+.home-cora-photo {
+    width: 450px;
+    max-width: 40%;
     border-radius: 10px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    flex: none;
-    width: 450px;
-
+    margin-left: 20px;
 }
 
-.about-me-text {
-    padding: 30px;
-    font-size: 20px;
+/* Стиль для блока с раскрывающимся текстом */
+.home-cora-more {
     flex: none;
-    width: 1030px;
-    font-size: 180%;
-}
-
-.cora-more {
-    flex: none;
+    width: 100%;
+    max-width: 1200px;
+    /* Ограничим ширину раскрывающегося текста */
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 30px;
     font-size: 120%;
 }
 
-.cora-more p {
+.home-cora-more p {
     line-height: 1.4;
 }
 
-summary {
+.home-cora-more summary {
     padding-bottom: 5px;
     padding-left: 10px;
     cursor: pointer;
@@ -405,8 +432,37 @@ summary {
     border-radius: 5px;
     width: 150px;
     background-color: #A87CB9;
-
+    font-weight: bold;
+    color: #fff;
 }
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .home-intro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-about-me-text {
+        font-size: 100%;
+        /* Уменьшаем размер текста для мобильной версии */
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home-cora-photo {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .home-cora-more {
+        font-size: 90%;
+        /* Чуть меньше шрифт для раскрывающегося текста */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 
 .button-more a {
     color: #000;
