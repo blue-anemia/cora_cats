@@ -57,37 +57,153 @@
             <li><a href="index.html">На главную</a></li>
             <li class="breadcrumbs-current">Котобайки</li>
         </ul>
-        <section class="story-container">
-            <article class="story-card">
-                <img class="story-image" src="cat-photo1.jpg" alt="Фото кота">
-                <div class="story-content">
-                    <h3>История спасения Мурзика</h3>
-                    <p>Краткий текст истории о том, как Мурзик оказался на улице...</p>
-                    <button class="read-more-btn" onclick="openModal('story1')">
-                        <i class="fas fa-paw"></i> Читать полностью
-                    </button>
-                </div>
-            </article>
+        <h2 class="big-heading">Каждому коту нужен дом!</h2>
+        <div class="info-container">
+            <p class="page-info">
+                <strong>Рассказы о котах, которые стали нашими и тех, которых мы пристроили.</strong><br>
+                Истории бывают и весёлые и грустные, но большинство из них с хорошим концом.
+                Надеюсь, эти байки помогут сомневающимся решиться помочь какому-нибудь котику. Если заниматься спасением
+                грамотно, то это совсем не так сложно, как может показаться со стороны.
+
+            </p>
+            <img class="inner-page-photo" src="images/cat-stories-intro.jpg" width="350">
+        </div>
+        <section class="stories-section">
+            <div>
+                <h2 class="story-header">О моих котах</h2>
+            </div>
+            <div class="story-container">
+                <!-- Первая статья -->
+                <article class="story-card">
+                    <img src="images/cat stories/story1.jpg" alt="Кот Чеша" class="story-image">
+                    <div class="story-content">
+                        <h3>Чеша — мой первый кот</h3>
+                        <p>Чеша или Чеширский кот, был старше меня и он жил у бабушки...</p>
+                        <button class="read-more-btn" onclick="openModal('story1')">
+                            <i class="fa fa-paw"></i> Читать полностью
+                        </button>
+                    </div>
+                </article>
+                <!-- Повторяющиеся блоки -->
+                <!-- Вторая статья -->
+                <article class="story-card">
+                    <img src="images/cat stories/story2.1.jpg" alt="Киса Наташа" class="story-image">
+                    <div class="story-content">
+                        <h3>Киса-Наташа — первая кошка, которая жила со мной</h3>
+                        <p>Киса-Наташа попала к нам подростком в конце восьмидесятых...</p>
+                        <button class="read-more-btn" onclick="openModal('story2')">
+                            <i class="fa fa-paw"></i> Читать полностью
+                        </button>
+                    </div>
+                </article>
+                <!-- Третья статья -->
+                <article class="story-card">
+                    <img src="images/cat stories/story3.jpg" alt="Франц" class="story-image">
+                    <div class="story-content">
+                        <h3>Франц – кот из музыкальной семьи</h3>
+                        <p>После исчезновения Кисы-Наташи папа долго отказывался заводить кота...</p>
+                        <button class="read-more-btn" onclick="openModal('story3')">
+                            <i class="fa fa-paw"></i> Читать полностью
+                        </button>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <h2 class="story-header">О котах друзей</h2>
+            </div>
+            <div class="story-container">
+                <!-- Истории о котах друзей -->
+                <article class="story-card">
+                    <img src="cat2.jpg" alt="Кот друга" class="story-image">
+                    <div class="story-content">
+                        <h3>История кота друга</h3>
+                        <p>Это краткое описание истории о коте друга...</p>
+                        <button class="read-more-btn" onclick="openModal('story2')">
+                            <i class="fa fa-paw"></i> Читать полностью
+                        </button>
+                    </div>
+                </article>
+                <!-- Повторяющиеся блоки -->
+            </div>
         </section>
 
-        <!-- Модальное окно -->
+        <!-- Модальное окно 1-й истории -->
         <div id="story1" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('story1')">&times;</span>
-                <div class="modal-story">
-                    <h3>История спасения Мурзика</h3>
-                    <div class="slider">
-                        <img class="slide" src="cat-photo1.jpg" alt="Фото кота 1">
-                        <img class="slide" src="cat-photo2.jpg" alt="Фото кота 2" style="display:none;">
-                        <img class="slide" src="cat-photo3.jpg" alt="Фото кота 3" style="display:none;">
-                        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-                        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+                <button class="close" onclick="closeModal('story1')">&times;</button>
+                <article>
+                    <h3>Чеша - мой первый кот</h3>
+                    <div class="slider" data-has-multiple="false">
+                        <div class="slide active"><img src="images/cat stories/story1.jpg" alt="Кот Чеша"></div>
+                        <button class="prev" onclick="plusSlides('story1', -1)">&#10094;</button>
+                        <button class="next" onclick="plusSlides('story1', 1)">&#10095;</button>
                     </div>
-                    <p>Полный текст истории о том, как Мурзик оказался на улице и каким образом его спасли...</p>
-                </div>
+                    <p>Чеша или Чеширский кот, был старше меня и он жил у бабушки с дедушкой с конца семидесятых годов.
+                        Мы встречались на выходных и проводили вместе лето на даче. Он смиренно терпел мои приставания и
+                        ни разу не цапнул, хотя было за что. Чеша был настоящий полосатый котище, и я до сих пор считаю,
+                        что истинный кот должен быть полосат. Вспоминаю о нём с бесконечной нежностью. Чеша прожил 9
+                        лет, что для тех времён было не так и мало.
+                        Благодаря Чеше моё первое слово было "киса".
+                    </p>
+                </article>
             </div>
         </div>
-
+        <!-- Модальное окно 2-й истории -->
+        <div id="story2" class="modal">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal('story2')">&times;</button>
+                <article>
+                    <h3>Киса-Наташа — первая кошка, которая жила со мной</h3>
+                    <div class="slider" data-has-multiple="true">
+                        <div class="slide active"><img src="images/cat stories/story2.1.jpg" alt="Киса Наташа"></div>
+                        <div class="slide"><img src="images/cat stories/story2.2.jpg" alt="Киса Наташа - фото 2">
+                        </div>
+                        <button class="prev" onclick="plusSlides('story2', -1)">&#10094;</button>
+                        <button class="next" onclick="plusSlides('story2', 1)">&#10095;</button>
+                    </div>
+                    <p>Киса-Наташа попала к нам подростком в конце восьмидесятых: её принесли папины друзья из какой-то
+                        общаги. Она была не в курсе, что её зовут Наташа, откликалась на Кису. Она была очень красивой
+                        пушистой белой кошкой, а главное бесконечно нежной и ласковой, а ко мне относилась как к своему
+                        котенку. Мы жили на первом этаже, и она часто убегала, в результате чего по несколько раз в год
+                        приносила котят. Стерилизовать кошку в те времена было нереально, и мама бесконечно раздавала
+                        котят. К сожалению, Киса прожила у нас всего несколько лет. Потом она начала болеть, как я
+                        предполагаю теперь, у неё была пиометра (воспаление матки), и в один непрекрасный день не
+                        вернулась с прогулки.
+                    </p>
+                </article>
+            </div>
+        </div>
+        <!-- Модальное окно 3-й истории -->
+        <div id="story3" class="modal">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal('story3')">&times;</button>
+                <article>
+                    <h3>Франц – кот из музыкальной семьи</h3>
+                    <div class="slider" data-has-multiple="false">
+                        <div class="slide active"><img src="images/cat stories/story3.jpg" alt="Кот Франц"></div>
+                    </div>
+                    <button class="prev" onclick="plusSlides('story3', -1)">&#10094;</button>
+                    <button class="next" onclick="plusSlides('story3', 1)">&#10095;</button>
+                    <p>После исчезновения Кисы-Наташи папа долго отказывался заводить кота, но в один прекрасный день в
+                        середине
+                        девяностых, всё же принёс мне пушистого котенка, взяв его у друзей-музыкантов из первого состава
+                        Филармонии. Франц был не просто ласковым, но и очень умным котом. Настоящий аристократ, да ещё и
+                        с
+                        идеальным слухом. Видимо не зря он рос в семье музыкантов. Я в те времена училась играть на
+                        гитаре и
+                        Франц начинал орать на меня стоило только взять не ту ноту. Так себе учитель ;)
+                        Франц, или Фася, как звали его родители, не считал меня мамой, но уже и не держал за котёнка, у
+                        нас были
+                        прекрасные братско-сестринские отношения.
+                        К сожалению, история Кисы нас ничему не научила, и Франц тоже часто выскальзывал в форточку
+                        погулять и
+                        однажды не вернулся. Франц был очень красивым и умным, так что мы всей семьёй верим, что он не
+                        погиб, а
+                        нашёл себе другой дом.
+                    </p>
+                </article>
+            </div>
+        </div>
         <a href="#" class="scroll-to-top">&#8593;</a>
     </main>
     <footer class="main-footer">

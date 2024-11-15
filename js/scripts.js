@@ -64,44 +64,65 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Функция открытия модального окна
-function openModal(id) {
-  document.getElementById(id).style.display = "block";
+// Функция для открытия модального окна
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.style.display = "block";
+  document.body.classList.add("no-scroll"); // Запрещаем скроллинг сайта
+
+  // Проверка количества слайдов
+  const slides = modal.querySelectorAll(".slide");
+  const hasMultipleSlides = slides.length > 1;
+  const slider = modal.querySelector(".slider");
+
+  // Устанавливаем атрибут для слайдера в зависимости от количества слайдов
+  slider.setAttribute("data-has-multiple", hasMultipleSlides);
+
+  // Скрытие или показ кнопок листания в зависимости от количества слайдов
+  const prevButton = modal.querySelector(".prev");
+  const nextButton = modal.querySelector(".next");
+  if (hasMultipleSlides) {
+    prevButton.style.display = "block";
+    nextButton.style.display = "block";
+  } else {
+    prevButton.style.display = "none";
+    nextButton.style.display = "none";
+  }
+
+  // Устанавливаем первый слайд активным
+  slides.forEach((slide, index) => {
+    slide.classList.remove("active");
+    if (index === 0) slide.classList.add("active");
+  });
+
+  // Инициализация текущего индекса слайда
+  slider.setAttribute("data-current-slide", "0");
 }
 
-// Функция закрытия модального окна
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
+// Функция для закрытия модального окна
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+  document.body.classList.remove("no-scroll"); // Разрешаем скроллинг сайта
 }
 
-// Закрытие модального окна при клике вне его области
-window.onclick = function (event) {
-  const modals = document.getElementsByClassName("modal");
-  for (let i = 0; i < modals.length; i++) {
-    if (event.target == modals[i]) {
-      modals[i].style.display = "none";
-    }
-  }
-};
+// Функция для переключения слайдов
+function plusSlides(modalId, n) {
+  const modal = document.getElementById(modalId);
+  const slides = modal.querySelectorAll(".slide");
+  const slider = modal.querySelector(".slider");
 
-// Функции для слайдера
-let slideIndex = 0;
-showSlides(slideIndex);
+  let currentSlideIndex = parseInt(slider.getAttribute("data-current-slide"));
+  const totalSlides = slides.length;
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
+  // Вычисляем следующий индекс с зацикливанием
+  currentSlideIndex = (currentSlideIndex + n + totalSlides) % totalSlides;
 
-function showSlides(n) {
-  let slides = document.getElementsByClassName("slide");
-  if (n >= slides.length) {
-    slideIndex = 0;
-  }
-  if (n < 0) {
-    slideIndex = slides.length - 1;
-  }
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex].style.display = "block";
+  // Обновляем активные слайды
+  slides.forEach((slide, index) => {
+    slide.classList.remove("active");
+    if (index === currentSlideIndex) slide.classList.add("active");
+  });
+
+  // Обновляем текущий индекс в slider
+  slider.setAttribute("data-current-slide", currentSlideIndex.toString());
 }
