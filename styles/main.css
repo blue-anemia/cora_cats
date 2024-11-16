@@ -1280,6 +1280,17 @@ header {
     /* Фото адаптируется под контейнер, сохраняя пропорции */
 }
 
+.modal-content a {
+    color: #6a1b9a;
+    font-weight: bold;
+
+}
+
+.modal-content a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
 /* Запрет скроллинга для сайта */
 body.no-scroll {
     overflow: hidden;
