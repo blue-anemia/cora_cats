@@ -101,7 +101,8 @@ function openModal(modalId) {
 
 // Функция для закрытия модального окна
 function closeModal(modalId) {
-  document.getElementById(modalId).style.display = "none";
+  const modal = document.getElementById(modalId);
+  modal.style.display = "none";
   document.body.classList.remove("no-scroll"); // Разрешаем скроллинг сайта
 }
 
@@ -126,3 +127,16 @@ function plusSlides(modalId, n) {
   // Обновляем текущий индекс в slider
   slider.setAttribute("data-current-slide", currentSlideIndex.toString());
 }
+
+// Закрытие модального окна при клике на затемнённую область
+document.addEventListener("click", function (event) {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach((modal) => {
+    if (
+      event.target === modal && // Проверяем, что клик был именно на модальный контейнер
+      modal.style.display === "block"
+    ) {
+      closeModal(modal.id);
+    }
+  });
+});
