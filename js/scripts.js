@@ -57,10 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const burgerMenu = document.querySelector(".burger-menu");
   const siteNavigation = document.querySelector(".site-navigation");
+  const body = document.body;
 
   burgerMenu.addEventListener("click", function () {
-    burgerMenu.classList.toggle("active");
-    siteNavigation.classList.toggle("active");
+    burgerMenu.classList.toggle("active"); // Переключаем состояние кнопки
+    siteNavigation.classList.toggle("active"); // Переключаем состояние меню
+    body.classList.toggle("lock-scroll"); // Запрещаем скролл страницы
   });
 });
 

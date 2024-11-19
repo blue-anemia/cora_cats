@@ -163,9 +163,14 @@ header {
     height: auto;
 }
 
-/* Бургер-меню: по умолчанию скрыто на мобильных устройствах */
+/* Бургер-меню: по умолчанию скрыто на больших устройствах */
 .burger-menu {
     display: none;
+    /* Показать через медиа-запрос */
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    z-index: 1000;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -173,15 +178,19 @@ header {
     width: 30px;
     border: none;
     background: transparent;
-    cursor: pointer;
 }
 
 .burger-menu span {
-    width: 30px;
+    width: 100%;
     height: 4px;
     background-color: #9D6EAF;
     border-radius: 4px;
     transition: all 0.3s ease;
+}
+
+/* Запрещаем скролл страницы при активном меню */
+body.lock-scroll {
+    overflow: hidden;
 }
 
 /* Стили для меню */
@@ -324,44 +333,31 @@ header {
 }
 
 /* Стили для мобильных устройств */
-
-/* Показывать бургер-меню только на мобильных устройствах */
 @media (max-width: 768px) {
 
-    /* По умолчанию скрываем навигацию */
-    .site-navigation {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        /* Разместить меню ниже хедера */
-        left: 0;
-        width: 100%;
-        background-color: #9D6EAF;
-        /* Основной цвет сайта */
-        padding: 10px 0;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Когда бургер-меню активно, показываем навигацию */
-    .site-navigation.active {
-        display: flex;
-    }
-
-    /* Лого скрыто в бургер-меню */
+    /* Показываем лого только внутри бургер-меню на мобильных устройствах */
     .header-logo {
         display: none;
+        /* Скрыть логотип на мобильных устройствах по умолчанию */
     }
 
-    /* Позиционирование бургер-меню слева */
+    .burger-menu.active+.site-navigation .header-logo {
+        display: block;
+        /* Логотип будет виден внутри бургер-меню */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .header-logo img {
+        max-width: 80%;
+        /* Логотип будет занимать до 80% ширины */
+        height: auto;
+    }
+
     .burger-menu {
         display: flex;
-        position: absolute;
-        top: 20px;
-        left: 15px;
     }
 
-    /* Стили для кнопки бургер-меню в активном состоянии (крестик) */
     .burger-menu.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -374,35 +370,56 @@ header {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Стили для пунктов меню внутри бургер-меню */
+    .site-navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #9D6EAF;
+        padding: 20px;
+        z-index: 999;
+        overflow-y: hidden;
+        /* Убираем скролл внутри меню */
+    }
+
+    .site-navigation.active {
+        display: flex;
+    }
+
     .site-navigation li {
-        padding: 10px 20px;
+        padding: 10px 0;
         border-bottom: 1px solid white;
     }
 
-    /* Подпункты меню отображаются с отступами */
+    .site-navigation li:last-child {
+        border-bottom: none;
+    }
+
     .site-navigation li ul {
-        padding-left: 20px;
-    }
-
-    /* Вложенные пункты меню (без выпадающих списков, только с отступами) */
-    .dropdown-content {
         display: block;
-        list-style-type: none;
         padding-left: 20px;
-        /* Отступ для вложенных пунктов */
+        margin: 5px 0;
+        list-style: none;
     }
 
-    .site-navigation li a {
+    .site-navigation li ul li {
+        padding: 5px 0;
+        font-size: 16px;
+        color: #D7CEE1;
+    }
+
+    .site-navigation a {
         color: white;
         text-decoration: none;
+        font-size: 18px;
     }
 
-    /* Показываем логотип в бургер-меню */
-    .site-navigation.active .header-logo {
-        display: block;
-        margin-bottom: 20px;
-        text-align: center;
+    .site-navigation li:hover>ul {
+        display: none;
+        /* Не показываем списки на hover внутри бургер-меню */
     }
 }
 
@@ -783,6 +800,40 @@ header {
 
 .big-heading::after {
     margin-left: 25px;
+}
+
+@media (max-width: 768px) {
+    .big-heading {
+        font-size: 36px;
+        line-height: 40px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .big-heading::before,
+    .big-heading::after {
+        width: 30px;
+        height: 1px;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .big-heading {
+        font-size: 28px;
+        line-height: 32px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    .big-heading::before,
+    .big-heading::after {
+        width: 20px;
+        height: 1px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 }
 
 /* конец стилизации слогана */
