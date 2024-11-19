@@ -45,6 +45,20 @@ body {
     min-height: 100vh;
 }
 
+/* Мобильные размеры текста */
+@media (max-width: 991px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+
 /* Универсальные стили */
 
 *,
@@ -69,9 +83,14 @@ body {
     flex-direction: column;
 }
 
-
 header {
     margin-bottom: 75px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px;
+    }
 }
 
 .inner-page .header {
@@ -84,10 +103,43 @@ header {
 
 .container {
     flex-grow: 1;
-    width: 1500px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 10px;
 
+}
+
+/* Адаптивность для .container */
+@media (min-width: 577px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .container {
+        max-width: 1480px;
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 .header-menu-wrapper {
@@ -1474,6 +1526,19 @@ body.no-scroll {
 .main-footer {
     margin-top: 65px;
     padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 20px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-footer {
+        font-size: 12px;
+    }
 }
 
 .main-footer .container {
