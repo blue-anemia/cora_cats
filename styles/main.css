@@ -158,34 +158,13 @@ header {
     justify-content: space-between;
 }
 
+.header-logo {
+    display: block;
+}
+
 .header-logo img {
     max-width: 100%;
     height: auto;
-}
-
-/* Бургер-меню: по умолчанию скрыто на больших устройствах */
-.burger-menu {
-    display: none;
-    /* Показать через медиа-запрос */
-    position: absolute;
-    top: 20px;
-    left: 15px;
-    z-index: 1000;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    border: none;
-    background: transparent;
-}
-
-.burger-menu span {
-    width: 100%;
-    height: 4px;
-    background-color: #9D6EAF;
-    border-radius: 4px;
-    transition: all 0.3s ease;
 }
 
 /* Запрещаем скролл страницы при активном меню */
@@ -332,96 +311,147 @@ body.lock-scroll {
     /* Оставляем стрелку повёрнутой вверх */
 }
 
-/* Стили для мобильных устройств */
-@media (max-width: 768px) {
+.burger-menu {
+    display: none;
+    position: absolute;
+    left: 16px;
+    /* Размещаем кнопку слева */
+    top: 16px;
+    border: none;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    z-index: 2000;
+}
 
-    /* Показываем лого только внутри бургер-меню на мобильных устройствах */
+.burger-menu span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #224738;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.burger-menu span::before,
+.burger-menu span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #224738;
+    transition: all 0.3s ease;
+}
+
+.burger-menu span::before {
+    top: -8px;
+}
+
+.burger-menu span::after {
+    top: 8px;
+}
+
+/* Изменение на крестик при открытом меню */
+.burger-menu.active span {
+    background-color: transparent;
+}
+
+.burger-menu.active span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.burger-menu.active span::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
     .header-logo {
         display: none;
-        /* Скрыть логотип на мобильных устройствах по умолчанию */
-    }
-
-    .burger-menu.active+.site-navigation .header-logo {
-        display: block;
-        /* Логотип будет виден внутри бургер-меню */
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .header-logo img {
-        max-width: 80%;
-        /* Логотип будет занимать до 80% ширины */
-        height: auto;
-    }
-
-    .burger-menu {
-        display: flex;
-    }
-
-    .burger-menu.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .burger-menu.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .burger-menu.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        /* Скрываем логотип при закрытом меню */
     }
 
     .site-navigation {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #9D6EAF;
-        padding: 20px;
-        z-index: 999;
-        overflow-y: hidden;
-        /* Убираем скролл внутри меню */
-    }
-
-    .site-navigation.active {
         display: flex;
-    }
-
-    .site-navigation li {
-        padding: 10px 0;
-        border-bottom: 1px solid white;
-    }
-
-    .site-navigation li:last-child {
-        border-bottom: none;
-    }
-
-    .site-navigation li ul {
-        display: block;
-        padding-left: 20px;
-        margin: 5px 0;
-        list-style: none;
-    }
-
-    .site-navigation li ul li {
-        padding: 5px 0;
-        font-size: 16px;
-        color: #D7CEE1;
-    }
-
-    .site-navigation a {
+        /* Меню скрыто по умолчанию */
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #9D6EAF;
+        transition: left 0.3s ease;
         color: white;
-        text-decoration: none;
-        font-size: 18px;
+        padding: 20px 0;
+        /* Убираем лишний padding */
+        flex-direction: column;
+        align-items: flex-start;
+        /* Выравниваем меню по левому краю */
+        z-index: 1000;
+        overflow-y: auto;
     }
 
-    .site-navigation li:hover>ul {
+    .site-navigation.open {
+        left: 0;
+        /* Выезд меню */
+    }
+
+    .site-navigation ul {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .site-navigation ul li {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .site-navigation ul li a {
+        display: block;
+        text-align: left;
+        /* Выравниваем текст по левому краю */
+        color: white;
+        font-size: 18px;
+        padding: 10px 20px;
+        /* Отступы внутри ссылок */
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Разделители */
+        width: 100%;
+        box-sizing: border-box;
+        /* Учитываем padding в ширине */
+    }
+
+    .site-navigation ul li:last-child a {
+        border-bottom: none;
+        /* Убираем разделитель у последнего пункта */
+    }
+
+    .site-navigation li .dropdown-content {
+        display: block;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-line {
         display: none;
-        /* Не показываем списки на hover внутри бургер-меню */
     }
 }
+
 
 .breadcrumbs {
     display: flex;
