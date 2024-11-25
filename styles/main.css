@@ -184,7 +184,6 @@ body.lock-scroll {
     width: 100%;
 }
 
-
 .site-navigation li {
     margin-right: 20px;
 }
@@ -376,8 +375,25 @@ body.lock-scroll {
     }
 
     .header-logo {
-        display: none;
-        /* Скрываем логотип при закрытом меню */
+        display: block;
+        /* display: none; */
+        position: relative;
+        /* Устанавливаем относительное позиционирование */
+        z-index: 1200;
+        /* Повышаем z-index для логотипа */
+        margin-bottom: 20px;
+        /* Отступ снизу для логотипа */
+        max-width: 200px;
+        /* Устанавливаем максимальную ширину для логотипа */
+        width: 80%;
+        /* Логотип не выходит за пределы контейнера */
+        height: auto;
+        /* Соответствующая высота для пропорций */
+    }
+
+    .site-navigation.open .header-logo {
+        display: block;
+        /* Показываем логотип, когда меню открыто */
     }
 
     .site-navigation {
@@ -422,7 +438,7 @@ body.lock-scroll {
         text-align: left;
         /* Выравниваем текст по левому краю */
         color: white;
-        font-size: 18px;
+        font-size: 14px;
         padding: 10px 20px;
         /* Отступы внутри ссылок */
         text-decoration: none;
