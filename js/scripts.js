@@ -65,6 +65,61 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Скрипт для карусели "Мои коты"
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Находим все карусели на странице
+  const carousels = document.querySelectorAll(".my-cats-carousel");
+
+  carousels.forEach((carouselElement) => {
+    const carousel = carouselElement.querySelector(".carousel-images");
+    const images = carousel.querySelectorAll("img");
+    const prevButton = carouselElement.querySelector(".carousel-button.prev");
+    const nextButton = carouselElement.querySelector(".carousel-button.next");
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length; // Цикличность
+      updateCarousel();
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length; // Цикличность
+      updateCarousel();
+    }
+
+    nextButton.addEventListener("click", showNext);
+    prevButton.addEventListener("click", showPrev);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const detailsElements = document.querySelectorAll(".button-more");
+
+  // Управление текстом о котах Проверяем ширину экрана
+  const updateDetails = () => {
+    const isMobile = window.innerWidth <= 768;
+
+    detailsElements.forEach((details) => {
+      if (isMobile) {
+        details.removeAttribute("open"); // Закрываем на мобильных
+      } else {
+        details.setAttribute("open", ""); // Открываем на десктопе
+      }
+    });
+  };
+
+  // Обновляем при загрузке и изменении размера окна
+  updateDetails();
+  window.addEventListener("resize", updateDetails);
+});
+
 // Функция для открытия модального окна
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
