@@ -889,10 +889,14 @@ body.lock-scroll {
 }
 
 .carousel-images img {
+    max-height: 650px;
+    /* Ограничиваем высоту */
+
     width: 100%;
     flex-shrink: 0;
     border-radius: 10px;
 }
+
 
 .carousel-button {
     position: absolute;
@@ -946,6 +950,7 @@ body.lock-scroll {
     margin-bottom: 50px;
 }
 
+
 .take-cat-container {
     position: relative;
 
@@ -966,7 +971,6 @@ body.lock-scroll {
     text-decoration: underline
 }
 
-
 .take-cat-item {
     list-style: none;
 }
@@ -977,6 +981,29 @@ body.lock-scroll {
 
 .take-cat p {
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .take-cat-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .take-cat-list {
+        text-align: left;
+        /* Список остается выровненным по левому краю */
+    }
+
+    .take-cat h2 {
+        font-size: 1.5rem;
+        /* Уменьшаем заголовок */
+        margin: 20px 0;
+    }
+
+    .take-cat p,
+    .take-cat a {
+        font-size: 1rem;
+    }
 }
 
 
