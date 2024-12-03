@@ -1821,6 +1821,11 @@ body.no-scroll {
 
 /* конец оформления кнопки якоря */
 .main-footer {
+
+    color: #fff;
+    /* Белый текст */
+    font-size: 0.9rem;
+    line-height: 1.5;
     margin-top: 65px;
     padding: 60px 0;
 }
@@ -1838,12 +1843,22 @@ body.no-scroll {
     }
 }
 
+.main-footer a {
+    color: #451266;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.main-footer a:hover {
+    color: #fff;
+}
+
 .main-footer .container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px;
+    /* Отступы между секциями */
 }
 
 .footer-info {
@@ -1851,44 +1866,76 @@ body.no-scroll {
 }
 
 .footer-info b {
+    color: #451266;
     display: block;
     margin-bottom: 15px;
 }
 
-.footer-info a {
-    color: #000;
-}
-
 .footer-social {
     text-align: center;
-    width: 145px;
+    flex-grow: 1;
+    max-width: 300px;
+    /* Установите ширину блока, чтобы контент не выходил за его пределы */
+    margin: 0 auto;
+    /* Центруем блок */
+    overflow: hidden;
 }
 
 .footer-social b {
+    color: #451266;
     display: block;
     margin-bottom: 15px;
 }
 
 .footer-social ul {
     display: flex;
-    justify-content: space-between;
-    width: 141px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 15px;
+    /* Отступы между иконками */
+    flex-wrap: wrap;
     padding: 0;
+    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .footer-social a {
-    color: black;
+    font-size: 1.5rem;
+    /* Размер иконок */
+    color: #451266;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+    transform: scale(1.2);
+    /* Увеличение иконок при наведении */
+}
+
+.footer-social a.email-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    /* Центрируем содержимое ссылки */
+    text-align: center;
+    flex-wrap: wrap;
+    /* Если текст или иконка слишком длинные, они корректно оборачиваются */
+    max-width: 100%;
+    /* Ограничиваем ширину ссылки в рамках блока */
+    overflow: hidden;
+    /* Предотвращаем выход содержимого */
+    word-break: break-word;
+    /* Переносим текст при необходимости */
+}
+
+.footer-social a.email-link b {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1;
 }
 
 .footer-social li {
     list-style: none;
-}
-
-.footer-social li:hover,
-.footer-social li:focus {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 15%;
 }
 
 .footer-copyright {
@@ -1898,6 +1945,7 @@ body.no-scroll {
 }
 
 .footer-copyright b {
+    color: #451266;
     display: block;
     margin-bottom: 15px;
 }
@@ -1905,14 +1953,47 @@ body.no-scroll {
 .footer-copyright .poweredby {
     display: block;
     margin-right: 0;
-    border: #000 1px solid;
+    border: #fff 1px solid;
     border-radius: 15px;
-    color: #000;
+    padding: 5px 10px;
+    color: #451266;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .poweredby:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
+    background-color: #451266;
+    color: #451266;
+}
+
+/* Разделительные линии между секциями */
+.footer-info,
+.footer-social,
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+}
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .main-footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-info,
+    .footer-social,
+    .footer-copyright {
+        width: 100%;
+        /* Растягиваем секции на всю ширину */
+        margin-bottom: 20px;
+        /* Отступы между секциями */
+    }
+
+    .footer-social ul {
+        justify-content: center;
+    }
 }
 
 .visually-hidden {
