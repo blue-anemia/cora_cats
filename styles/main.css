@@ -1101,6 +1101,7 @@ body.lock-scroll {
     /* Отступ снизу, чтобы отделить аннотацию от основного текста */
 }
 
+
 .page-info {
     flex: 1;
     /* Чтобы текст занимал всю доступную ширину */
@@ -1145,22 +1146,26 @@ body.lock-scroll {
     /* Легкое увеличение при наведении */
 }
 
-@media (max-width: 768px) {
+@media (min-width: 980px) and (max-width: 1500px) {
     .info-container {
-        flex-direction: column;
-        /* На маленьких экранах фото и текст будут друг под другом */
-        text-align: center;
+        flex-wrap: nowrap;
+        /* Сохраняем один ряд для фото и текста */
     }
 
     .inner-page-photo {
-        margin: 0 auto;
-        /* Центрируем фото на мобильных устройствах */
+        max-width: 400px;
+        /* Ограничиваем ширину фото */
+        height: auto;
+        /* Сохраняем пропорции */
+        flex-shrink: 0;
+        /* Запрещаем фото сжиматься */
     }
 
     .page-info {
-        width: 100%;
-        /* Текст занимает всю ширину */
-        padding-left: 0;
+        flex: 1;
+        /* Текст занимает оставшееся пространство */
+        max-width: calc(100% - 400px);
+        /* Текст не пересекается с фото */
     }
 }
 
@@ -1252,21 +1257,12 @@ body.lock-scroll {
 /* конец оформления кнопки */
 
 /* стили для страницы котоводство */
-.kotovodstvo-text {
-    flex: 1;
-    font-size: 1.5em;
-    font-style: italic;
-    color: #4a4a4a;
-    padding-right: 20px;
-    line-height: 1.6;
-}
-
+.kotovodstvo-text,
 .kotovodstvo-info {
     flex: 1;
     font-size: 1.2em;
     line-height: 1.6;
     color: #4a4a4a;
-    padding-right: 20px;
 }
 
 .kotovodstvo-info span {
@@ -1279,13 +1275,13 @@ body.lock-scroll {
 }
 
 .kotovodstvo-photo {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     height: auto;
     border-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .kotovodstvo-photo:hover {
@@ -1293,23 +1289,46 @@ body.lock-scroll {
     /* Легкое увеличение при наведении */
 }
 
-@media (max-width: 768px) {
-    .cora-container {
-        flex-direction: column;
-        /* Вертикальное расположение на маленьких экранах */
-        text-align: center;
+@media (min-width: 980px) and (max-width: 1500px) {
+    .info-container {
+        flex-wrap: wrap;
+        /* Позволяем элементам переноситься */
     }
 
     .kotovodstvo-photo {
+        max-width: 300px;
+        /* Уменьшаем максимальную ширину фото */
+        height: auto;
+        /* Сохраняем пропорции */
         margin: 0 auto;
         /* Центрируем фото */
     }
 
     .kotovodstvo-text,
     .kotovodstvo-info {
+        flex: 1 1 calc(50% - 40px);
+        /* Текстовые блоки занимают 50% ширины */
+        box-sizing: border-box;
+        /* Учитываем padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .kotovodstvo-photo {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .kotovodstvo-text,
+    .kotovodstvo-info {
+        flex: 1 1 100%;
         padding-right: 0;
         width: 100%;
-        /* Текст занимает всю ширину */
     }
 }
 
@@ -1372,7 +1391,7 @@ body.lock-scroll {
 
 .lection-text,
 .presentation-text {
-    font-size: 1.8em;
+    font-size: 1.5em;
     text-align: center;
     margin-top: 30px;
 }
@@ -1385,20 +1404,47 @@ body.lock-scroll {
 @media (max-width: 768px) {
     .kotovodstvo-container {
         text-align: center;
+        padding: 20px;
+        /* Добавим внутренние отступы */
     }
 
     .important-points {
-        padding: 15px;
+        padding: 10px;
+        /* Уменьшим отступы на мобильных */
+    }
+
+    .important-points ul {
+        list-style-type: disc;
+        padding-left: 30px;
+        /* Выравниваем маркеры списка */
+    }
+
+    .important-points li {
+        margin-bottom: 10px;
+        text-align: left;
+        /* Сохраняем текст выровненным влево */
     }
 
     .pdf-button {
-        width: 100%;
+        width: calc(100% - 30px);
+        /* Оставим отступы от краев */
         padding: 15px;
+        margin: 10px auto;
+        /* Центрируем кнопку */
+    }
+
+    .lection-text,
+    .presentation-text {
+        font-size: 1.4em;
+        /* Уменьшаем размер текста */
+        margin-top: 20px;
     }
 
     .video-lection iframe {
         width: 100%;
         height: auto;
+        max-width: 100%;
+        /* Убедимся, что iframe не выходит за пределы контейнера */
     }
 }
 
@@ -1799,7 +1845,7 @@ body.no-scroll {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #753C8A;
+    background-color: #AF9CA9;
     color: #fff;
     width: 40px;
     height: 40px;
@@ -1811,7 +1857,7 @@ body.no-scroll {
 }
 
 .scroll-to-top:hover {
-    background-color: #D2B1DF;
+    background-color: #8a7280;
 }
 
 /* Показываем кнопку при прокрутке вниз */
