@@ -1135,8 +1135,6 @@ body.lock-scroll {
     width: 350px;
     height: auto;
     border-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
