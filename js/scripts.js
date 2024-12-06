@@ -196,3 +196,15 @@ document.addEventListener("click", function (event) {
     }
   });
 });
+
+//Переключение вкладок в котошмоте
+function showCategory(category) {
+  document.querySelectorAll(".tab-content").forEach((content) => {
+    content.classList.remove("active");
+  });
+  document.querySelectorAll(".tab-button").forEach((button) => {
+    button.classList.remove("active");
+  });
+  document.getElementById(category).classList.add("active");
+  event.target.classList.add("active");
+}
