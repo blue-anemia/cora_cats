@@ -516,17 +516,6 @@ body.lock-scroll {
     display: none;
 }
 
-.cora-title {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
-
 .home-cora-container {
     display: flex;
     flex-direction: column;
@@ -1091,7 +1080,7 @@ body.lock-scroll {
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    background: linear-gradient(to top, #D4B3E0, #FEFCFD);
+    background: #F7F0F8;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 20px;
@@ -1099,16 +1088,6 @@ body.lock-scroll {
     /* Добавляем расстояние между элементами */
     margin-bottom: 20px;
     /* Отступ снизу, чтобы отделить аннотацию от основного текста */
-}
-
-
-.page-info {
-    flex: 1;
-    /* Чтобы текст занимал всю доступную ширину */
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #4a4a4a;
-    font-weight: 400;
 }
 
 .page-info strong {
@@ -1131,17 +1110,75 @@ body.lock-scroll {
     text-decoration: underline;
 }
 
+.inner-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .inner-page-photo {
     width: 350px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    margin: 0 auto;
+    /* Центруем фото на маленьких экранах */
 }
 
 .inner-page-photo:hover {
     transform: scale(1.05);
     /* Легкое увеличение при наведении */
+}
+
+.page-info {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Адаптивность для планшетов (768px - 993px) */
+@media (max-width: 993px) {
+    .inner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inner-page-photo {
+        max-width: 70%;
+        /* Фото занимает до 70% ширины экрана */
+        margin-bottom: 20px;
+    }
+
+    .page-info {
+        font-size: 14px;
+        /* Уменьшаем шрифт для лучшей читаемости */
+        padding: 0 10px;
+    }
+}
+
+/* Адаптивность для мобильных (до 768px) */
+@media (max-width: 768px) {
+    .inner-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner-page-photo {
+        max-width: 100%;
+        /* Фото растягивается на всю ширину */
+        border-radius: 10px;
+    }
+
+    .page-info {
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 0 15px;
+        text-align: justify;
+    }
 }
 
 @media (min-width: 980px) and (max-width: 1500px) {
@@ -1449,64 +1486,246 @@ body.lock-scroll {
 /* конец стилизации страницы "Котоводство"*/
 
 /* Начало стилизации страницы "Котошмот" */
-.tabs {
-    display: flex;
+.tabs-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px;
     margin-bottom: 20px;
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 табов в строке */
+    margin-bottom: 0;
+    /* Убираем отступ */
+    background: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    gap: 10px;
+    justify-items: stretch;
 }
 
 .tab-button {
     flex: 1;
+    min-width: 120px;
     padding: 10px;
-    background: #ddd;
+    background: #eee;
     border: none;
     cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tab-button.active {
-    background: #f39c12;
+    background: #A87CB9;
     color: white;
 }
 
 .tab-content {
     display: none;
+    padding: 20px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
 }
 
 .tab-content.active {
     display: block;
 }
 
+.category-description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    padding: 0 10px;
 }
 
 .product-card {
+    display: flex;
+    flex-direction: column;
+    /* Вертикальное выравнивание */
+    justify-content: space-between;
+    /* Растягиваем содержимое */
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
     background-color: #fff;
+    height: 400px;
+    /* Фиксированная высота карточки */
 }
 
 .product-card img {
     max-width: 100%;
-    height: auto;
+    height: 150px;
+    /* Ограничиваем высоту изображения */
+    object-fit: contain;
+    /* Сохраняем пропорции изображения */
     border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    text-align: center;
+    flex-grow: 1;
+    /* Заполняем оставшееся место */
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+    flex-grow: 1;
+    /* Заполняем оставшееся место */
 }
 
 .product-link {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: auto;
+    /* Перемещаем кнопку вниз */
     padding: 10px 15px;
     color: #fff;
-    background-color: #f39c12;
+    background-color: #A87CB9;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .product-link:hover {
-    background-color: #e67e22;
+    background-color: #8A5CA2;
+}
+
+@media (max-width: 1500px) {
+    .tabs {
+        grid-template-columns: repeat(5, 1fr);
+        /* 5 табов на экранах от 1500px до 768px */
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 768px) {
+    .tabs {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 таба в строке */
+        padding: 10px;
+        /* Устанавливаем отступы */
+        gap: 5px;
+        /* Уменьшаем отступы между табами */
+    }
+
+    .tab-button {
+        font-size: 14px;
+        /* Уменьшаем размер шрифта на экранах от 768px до 481px */
+        padding: 8px;
+        /* Уменьшаем отступы */
+        white-space: normal;
+        /* Разрешаем перенос текста в табах */
+        word-wrap: break-word;
+        /* Переносим длинные слова на следующую строку */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        /* Уменьшаем расстояние между карточками */
+    }
+
+    .product-card {
+        height: 350px;
+        /* Уменьшаем высоту карточек */
+    }
+
+    .product-card img {
+        height: 120px;
+        /* Уменьшаем высоту изображений */
+    }
+
+    .product-card h3 {
+        font-size: 16px;
+        /* Слегка уменьшаем текст */
+    }
+
+    .product-card p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tabs {
+        grid-template-columns: repeat(3, 1fr);
+        /* Уменьшаем на экранах от 481px до 600px */
+        gap: 8px;
+        /* Добавляем небольшие отступы */
+    }
+
+    .tab-button {
+        font-size: 12px;
+        /* Уменьшаем размер шрифта для этих экранов */
+        padding: 6px;
+        /* Уменьшаем отступы */
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+    .tabs {
+        grid-template-columns: 1fr 1fr;
+        /* 2 таба в строке */
+        padding: 5px;
+        /* Уменьшаем отступы */
+    }
+
+    .tab-button {
+        font-size: 14px;
+        /* Уменьшаем шрифт на маленьких экранах */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        /* Одна карточка на строку */
+        gap: 10px;
+    }
+
+    .product-card {
+        height: auto;
+        /* Автоматическая высота для компактности */
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 100px;
+        /* Еще меньше изображений */
+    }
+
+    .product-card h3 {
+        font-size: 14px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+
+    .product-link {
+        padding: 8px 12px;
+        /* Компактная кнопка */
+        font-size: 14px;
+    }
 }
 
 /* Конец стилизации страницы "Котошмот" */
