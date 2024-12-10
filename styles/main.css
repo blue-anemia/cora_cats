@@ -1116,10 +1116,11 @@ body.lock-scroll {
     gap: 20px;
     align-items: center;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .inner-page-photo {
-    width: 100;
+
     max-width: 450px;
     height: auto;
     max-height: 350px;
@@ -1214,91 +1215,123 @@ body.lock-scroll {
 }
 
 
-.inner-content table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.inner-content td {
-    padding: 10px 15px;
-    border: 2px solid black;
-    width: 50%;
-}
-
-.inner-content td:last-child {
-    text-align: center;
-}
+/* Страница "Поддержать" */
 
 .inner-columns {
     display: flex;
     justify-content: space-between;
-
-    margin: 60px 0;
+    /* Разделяем блоки */
+    align-items: center;
+    /* Центрируем по вертикали */
+    flex-wrap: wrap;
+    /* Для адаптации на мобильных устройствах */
+    gap: 20px;
 }
 
 .inner-column-left,
 .inner-column-right {
-    width: 700px;
+    flex: 1;
+    /* Одинаковая ширина колонок */
+    min-width: 300px;
+    /* Минимальная ширина, чтобы контент не сжимался */
 }
 
-/* * - значит любой первый элемент */
 
-.inner-column-left *:first-child,
-.inner-column-right *:first-child {
-    margin-top: 0;
+.inner-column-right {
+    display: flex;
+    justify-content: center;
+    /* Центрируем изображение */
+    align-items: center;
+    /* Центрируем по вертикали */
+    max-width: 100%;
 }
 
-/* кнопка для копирования номера карты */
-.copy-number {
-    width: 100px;
-    height: 24px;
+
+.donation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.donation-card {
     background: #fff;
-    border: none;
-    font: inherit;
-    font-weight: 500;
-    border-radius: 16px;
-    overflow: hidden;
-    transition-duration: 700ms;
-    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.copy-number span:first-child {
+.donation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.donation-card h4 {
+    font-size: 1.2em;
     color: #6a1b9a;
-    position: absolute;
-    transform: translate(-50%, -50%);
+    margin-bottom: 10px;
 }
 
-.copy-number span:last-child {
+.donation-card p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Настройка кнопок копирования */
+.copy-number {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #6a1b9a;
+    background-color: #fff;
+    border: 2px solid #6a1b9a;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.copy-number .copied-text {
+    display: none;
+    /* Скрыто изначально */
     color: #fff;
-    position: absolute;
-    opacity: 0;
-    transform: translateY(150%) translateX(-50%);
-    height: 22px;
-    line-height: 20px;
 }
 
-.copy-number:focus {
-    background-color: #40c606;
-    width: 120px;
-    height: 30px;
-    transition-duration: 500ms;
-    transition-delay: 50ms;
-
+.copy-number.copied .copy-text {
+    display: none;
+    /* Прячем текст Copy */
 }
 
-.copy-number:focus span:first-child {
-    opacity: 0;
-    transform: translateY(150%) translateX(-200%);
+.copy-number.copied .copied-text {
+    display: inline;
+    /* Показываем текст Copied! */
 }
 
-.copy-number:focus span:last-child {
-    transform: translateY(-50%) translateX(-50%);
-    opacity: 1;
-    transition-duration: 300ms;
-    transition-delay: 300ms;
+.copy-number:hover {
+    background-color: #6a1b9a;
+    color: #fff;
 }
 
-/* конец оформления кнопки */
+/* Изображение */
+.donation-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 550px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donation-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/*конец оформления стр Поддержать*/
 
 /* стили для страницы котоводство */
 .kotovodstvo-text,
@@ -1378,10 +1411,11 @@ body.lock-scroll {
 
 .kotovodstvo-container {
     margin: 0;
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 0;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background: linear-gradient(to top, #D4B3E0, #FEFCFD);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 10px;

@@ -26,28 +26,30 @@ document
   });
 
 // Скрипт на копирование номера карты в буфер обмена
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const copyButtons = document.querySelectorAll(".copy-number");
 
   copyButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      // Находим элемент, содержащий текст номера карты, исключая текст кнопки
-      const cardNumberNode = button.parentNode.childNodes[0];
-      let cardNumber = cardNumberNode.textContent.trim();
+      const cardNumber = this.closest("td")
+        .previousElementSibling.textContent.trim()
+        .replace("💳", "")
+        .trim();
 
-      // Убираем значок карты
-      cardNumber = cardNumber.replace("💳", "").trim();
-
+      // Копирование в буфер обмена
       navigator.clipboard
         .writeText(cardNumber)
         .then(() => {
+          // Меняем состояние кнопки
           button.classList.add("copied");
+
+          // Убираем состояние через 2 секунды
           setTimeout(() => {
             button.classList.remove("copied");
-          }, 2000); // 2 секунды
+          }, 2000);
         })
         .catch((err) => {
-          console.error("Не удалось скопировать текст: ", err);
+          console.error("Ошибка копирования:", err);
         });
     });
   });
