@@ -106,7 +106,7 @@ header {
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
-    max-width: 1200px;
+    max-width: 1500px;
 
 }
 
@@ -1220,12 +1220,17 @@ body.lock-scroll {
 .inner-columns {
     display: flex;
     justify-content: space-between;
+    background: #F7F0F8;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
     /* Разделяем блоки */
     align-items: center;
     /* Центрируем по вертикали */
     flex-wrap: wrap;
     /* Для адаптации на мобильных устройствах */
     gap: 20px;
+    width: 100%;
 }
 
 .inner-column-left,
@@ -1295,20 +1300,24 @@ body.lock-scroll {
     transition: all 0.3s ease;
 }
 
+.copy-number .copy-text {
+    display: inline;
+    /* Изначально показываем "Copy" */
+}
+
 .copy-number .copied-text {
     display: none;
-    /* Скрыто изначально */
-    color: #fff;
+    /* Изначально "Copied" скрыт */
 }
 
 .copy-number.copied .copy-text {
     display: none;
-    /* Прячем текст Copy */
+    /* Прячем "Copy" после нажатия */
 }
 
 .copy-number.copied .copied-text {
     display: inline;
-    /* Показываем текст Copied! */
+    /* Показываем "Copied" после нажатия */
 }
 
 .copy-number:hover {
@@ -1419,6 +1428,7 @@ body.lock-scroll {
     background: linear-gradient(to top, #D4B3E0, #FEFCFD);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    width: 100%;
 }
 
 .kotovodstvo-container p {

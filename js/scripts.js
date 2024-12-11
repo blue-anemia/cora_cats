@@ -27,31 +27,38 @@ document
 
 // Скрипт на копирование номера карты в буфер обмена
 document.addEventListener("DOMContentLoaded", () => {
-  const copyButtons = document.querySelectorAll(".copy-number");
+  const copyButton = document.querySelector(".copy-number");
 
-  copyButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const cardNumber = this.closest("td")
-        .previousElementSibling.textContent.trim()
-        .replace("💳", "")
-        .trim();
+  copyButton.addEventListener("click", function () {
+    // Находим номер карты
+    const cardNumber = this.closest(".donation-card")
+      .querySelector("p")
+      .textContent.trim()
+      .replace("💳", "")
+      .trim();
 
-      // Копирование в буфер обмена
-      navigator.clipboard
-        .writeText(cardNumber)
-        .then(() => {
-          // Меняем состояние кнопки
-          button.classList.add("copied");
+    if (!cardNumber) {
+      console.error("Номер карты не найден");
+      return;
+    }
 
-          // Убираем состояние через 2 секунды
-          setTimeout(() => {
-            button.classList.remove("copied");
-          }, 2000);
-        })
-        .catch((err) => {
-          console.error("Ошибка копирования:", err);
-        });
-    });
+    // Копируем в буфер обмена
+    navigator.clipboard
+      .writeText(cardNumber)
+      .then(() => {
+        console.log("Номер карты успешно скопирован:", cardNumber);
+
+        // Изменяем текст на кнопке
+        this.querySelector("span").textContent = "Copied!";
+
+        // Возвращаем исходный текст через 2 секунды
+        setTimeout(() => {
+          this.querySelector("span").textContent = "Copy";
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error("Ошибка копирования:", err);
+      });
   });
 });
 
