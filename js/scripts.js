@@ -27,39 +27,26 @@ document
 
 // Скрипт на копирование номера карты в буфер обмена
 document.addEventListener("DOMContentLoaded", () => {
-  const copyButton = document.querySelector(".copy-number");
+  document
+    .querySelector(".donation-cards")
+    ?.addEventListener("click", (event) => {
+      const button = event.target.closest(".copy-number");
+      if (!button) return;
 
-  copyButton.addEventListener("click", function () {
-    // Находим номер карты
-    const cardNumber = this.closest(".donation-card")
-      .querySelector("p")
-      .textContent.trim()
-      .replace("💳", "")
-      .trim();
+      const cardNumberElement = button
+        .closest(".donation-card")
+        ?.querySelector("p");
+      if (!cardNumberElement) {
+        console.error("Номер карты не найден.");
+        return;
+      }
 
-    if (!cardNumber) {
-      console.error("Номер карты не найден");
-      return;
-    }
-
-    // Копируем в буфер обмена
-    navigator.clipboard
-      .writeText(cardNumber)
-      .then(() => {
-        console.log("Номер карты успешно скопирован:", cardNumber);
-
-        // Изменяем текст на кнопке
-        this.querySelector("span").textContent = "Copied!";
-
-        // Возвращаем исходный текст через 2 секунды
-        setTimeout(() => {
-          this.querySelector("span").textContent = "Copy";
-        }, 2000);
-      })
-      .catch((err) => {
-        console.error("Ошибка копирования:", err);
+      const cardNumber = cardNumberElement.textContent.replace("💳", "").trim();
+      navigator.clipboard.writeText(cardNumber).then(() => {
+        button.classList.add("copied");
+        setTimeout(() => button.classList.remove("copied"), 2000);
       });
-  });
+    });
 });
 
 /* скрипт для активации бургер меню*/
