@@ -83,9 +83,6 @@ body {
     flex-direction: column;
 }
 
-header {
-    margin-bottom: 75px;
-}
 
 @media (max-width: 768px) {
     header {
@@ -150,6 +147,7 @@ header {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 
 .header-menu {
     display: flex;
@@ -476,7 +474,7 @@ body.lock-scroll {
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     list-style: none;
     color: black;
 }
@@ -1002,8 +1000,8 @@ body.lock-scroll {
     display: flex;
     align-items: center;
 
-    margin-top: 55px;
-    margin-bottom: 65px;
+    margin-top: 20px;
+    margin-bottom: 25px;
 
     font-size: 48px;
     line-height: 48px;
@@ -1120,7 +1118,6 @@ body.lock-scroll {
 }
 
 .inner-page-photo {
-
     max-width: 450px;
     height: auto;
     max-height: 350px;
@@ -1144,30 +1141,7 @@ body.lock-scroll {
     color: #333;
 }
 
-/* Адаптивность для планшетов (768px - 993px) */
-@media (max-width: 993px) {
-    .inner-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .inner-page-photo {
-        max-width: 80%;
-        /* Фото занимает до 70% ширины экрана */
-        margin-bottom: 20px;
-        object-fit: contain;
-    }
-
-    .page-info {
-        font-size: 14px;
-        /* Уменьшаем шрифт для лучшей читаемости */
-        padding: 0 10px;
-        max-width: 100%;
-        text-align: justify;
-    }
-}
-
-/* Адаптивность для мобильных (до 768px) */
+/* Стили для мобильных (до 768px) */
 @media (max-width: 768px) {
     .inner-content {
         flex-direction: column;
@@ -1177,7 +1151,6 @@ body.lock-scroll {
     .inner-page-photo {
         max-width: 100%;
         /* Фото растягивается на всю ширину */
-        max-height: 250px;
         object-fit: contain;
         border-radius: 10px;
     }
@@ -1188,32 +1161,118 @@ body.lock-scroll {
         padding: 0 15px;
         text-align: justify;
     }
+
+    .pdf-download {
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+        display: block;
+        /* Блочный элемент для контейнера кнопки */
+    }
+
+
+    .pdf-button {
+        display: block;
+        /* Блочный элемент для кнопок */
+        width: 90%;
+        max-width: 180px;
+        margin: 10px auto;
+        /* Центрируем кнопки и добавляем вертикальные отступы */
+        padding: 12px 24px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #AF9CA9;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        text-align: center;
+    }
+
+    .text-content .pdf-download {
+        display: block;
+        /* Убедимся, что контейнер блоковый */
+        text-align: center;
+        /* Центрируем дочерние элементы */
+    }
+
+    .text-content .pdf-button {
+        display: inline-block;
+        /* Кнопка все еще будет блочной */
+        margin: 0 auto;
+        /* Центрируем кнопку */
+    }
 }
 
-@media (min-width: 980px) and (max-width: 1500px) {
+/* Стили для планшетов (от 768px до 993px) */
+@media (max-width: 993px) {
+    .info-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .page-info {
+        flex: none;
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        padding: 0 10px;
+        text-align: justify;
+    }
+
+    .inner-page-photo {
+        max-width: 300px;
+        height: auto;
+        max-height: 250px;
+    }
+
+    .pdf-download {
+        text-align: center;
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    .pdf-button {
+        display: block;
+        width: 90%;
+        max-width: 180px;
+        margin: 10px auto;
+        padding: 12px 24px;
+    }
+}
+
+/* Стили для десктопа (от 993px до 1500px) */
+@media (min-width: 993px) and (max-width: 1500px) {
     .info-container {
         flex-wrap: nowrap;
-        /* Сохраняем один ряд для фото и текста */
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .page-info {
+        flex: none;
+        width: 65%;
+        text-align: left;
     }
 
     .inner-page-photo {
         max-width: 400px;
-        /* Ограничиваем ширину фото */
         height: auto;
-        /* Сохраняем пропорции */
         flex-shrink: 0;
-        /* Запрещаем фото сжиматься */
         max-height: 300px;
     }
 
-    .page-info {
-        flex: 1;
-        /* Текст занимает оставшееся пространство */
-        max-width: calc(100% - 400px);
-        /* Текст не пересекается с фото */
+    .pdf-download {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .pdf-button {
+        width: 200px;
+        display: inline-block;
     }
 }
-
 
 /* Страница "Поддержать" */
 
@@ -1457,6 +1516,20 @@ body.lock-scroll {
     margin-bottom: 10px;
 }
 
+.text-content {
+    display: flex;
+    flex-direction: column;
+    /* Расположить текст и кнопку вертикально */
+    flex: 1;
+    /* Занимает всю доступную ширину слева */
+}
+
+.text-content .pdf-download {
+    display: flex;
+    justify-content: flex-start;
+    /* Выравнивание по левому краю */
+}
+
 .pdf-download {
     text-align: center;
     margin: 20px 0;
@@ -1471,6 +1544,9 @@ body.lock-scroll {
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
+    text-align: center;
+    margin: 10px 0;
+
 }
 
 .pdf-button:hover {
@@ -1511,14 +1587,6 @@ body.lock-scroll {
         margin-bottom: 10px;
         text-align: left;
         /* Сохраняем текст выровненным влево */
-    }
-
-    .pdf-button {
-        width: calc(100% - 30px);
-        /* Оставим отступы от краев */
-        padding: 15px;
-        margin: 10px auto;
-        /* Центрируем кнопку */
     }
 
     .lection-text,
