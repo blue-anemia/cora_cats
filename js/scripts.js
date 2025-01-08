@@ -29,7 +29,7 @@ document
 document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector(".donation-cards")
-    ?.addEventListener("click", (event) => {
+    .addEventListener("click", (event) => {
       const button = event.target.closest(".copy-number");
       if (!button) return;
 
@@ -42,10 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const cardNumber = cardNumberElement.textContent.replace("💳", "").trim();
-      navigator.clipboard.writeText(cardNumber).then(() => {
-        button.classList.add("copied");
-        setTimeout(() => button.classList.remove("copied"), 2000);
-      });
+      navigator.clipboard
+        .writeText(cardNumber)
+        .then(() => {
+          button.classList.add("copied");
+          setTimeout(() => button.classList.remove("copied"), 2000);
+        })
+        .catch((error) => {
+          console.error("Ошибка при копировании в буфер обмена: ", error);
+        });
     });
 });
 
