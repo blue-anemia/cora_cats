@@ -164,6 +164,9 @@ body {
 .header-logo img {
     max-width: 100%;
     height: auto;
+    width: 20vw;
+    max-width: 200px;
+    margin-top: 20px;
 }
 
 /* Запрещаем скролл страницы при активном меню */
