@@ -90,10 +90,6 @@ body {
     }
 }
 
-.inner-page .header {
-    margin-bottom: 50px;
-}
-
 .page-title {
     color: #333333;
 }
@@ -147,7 +143,6 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-
 
 .header-menu {
     display: flex;
@@ -219,12 +214,10 @@ body.lock-scroll {
 }
 
 .active {
-
     background-color: #D7CEE1;
     border-radius: 8px;
     cursor: default;
 }
-
 
 .site-navigation a:hover,
 .site-navigation a:focus {
@@ -261,10 +254,8 @@ body.lock-scroll {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    /* убираю точки у списка */
     list-style-type: none;
     font-size: small;
-    /* убираю отступ слева у элементов выпадающего меню */
     padding-left: 0;
 }
 
@@ -307,11 +298,6 @@ body.lock-scroll {
     border-radius: 8px;
 }
 
-.site-navigation li.active>.dropdown-menu::after {
-    transform: rotate(-135deg);
-    /* Оставляем стрелку повёрнутой вверх */
-}
-
 .burger-menu {
     display: none;
     position: absolute;
@@ -322,16 +308,15 @@ body.lock-scroll {
     background: transparent;
     width: 24px;
     height: 24px;
-    z-index: 2000;
+    z-index: 3;
 }
 
 .burger-menu span {
     display: block;
     width: 24px;
-    height: 2px;
+    height: 1px;
     background-color: #224738;
     position: relative;
-    transition: all 0.3s ease;
 }
 
 .burger-menu span::before,
@@ -340,7 +325,7 @@ body.lock-scroll {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: #224738;
     transition: all 0.3s ease;
 }
@@ -369,8 +354,7 @@ body.lock-scroll {
 }
 
 
-
-/* Адаптивность для мобильных устройств */
+/* Настройка бургер-меню для мобильных устройств */
 @media (max-width: 768px) {
     .burger-menu {
         display: block;
@@ -378,24 +362,13 @@ body.lock-scroll {
 
     .header-logo {
         display: block;
-        /* display: none; */
         position: relative;
-        /* Устанавливаем относительное позиционирование */
-        z-index: 1200;
-        /* Повышаем z-index для логотипа */
-        margin-bottom: 20px;
-        /* Отступ снизу для логотипа */
-        max-width: 200px;
-        /* Устанавливаем максимальную ширину для логотипа */
-        width: 80%;
-        /* Логотип не выходит за пределы контейнера */
-        height: auto;
-        /* Соответствующая высота для пропорций */
+        margin: 0 auto;
     }
 
     .site-navigation.open .header-logo {
-        display: block;
-        /* Показываем логотип, когда меню открыто */
+        display: none;
+        /* Не показывать логотип, когда меню открыто */
     }
 
     .site-navigation {
@@ -408,24 +381,24 @@ body.lock-scroll {
         height: 100%;
         background-color: #9D6EAF;
         transition: left 0.3s ease;
-        color: white;
-        padding: 20px 0;
-        /* Убираем лишний padding */
+        padding: 0;
         flex-direction: column;
         align-items: flex-start;
         /* Выравниваем меню по левому краю */
-        z-index: 1000;
+        z-index: 2;
         overflow-y: auto;
     }
 
     .site-navigation.open {
         left: 0;
         /* Выезд меню */
+        top: 0;
     }
 
     .site-navigation ul {
         width: 100%;
         padding: 0;
+        padding-left: 10px;
         margin: 0;
     }
 
@@ -433,13 +406,12 @@ body.lock-scroll {
         width: 100%;
         margin: 0;
         padding: 0;
+        padding-left: 10px;
     }
 
     .site-navigation ul li a {
         display: block;
         text-align: left;
-        /* Выравниваем текст по левому краю */
-        color: white;
         font-size: 14px;
         padding: 10px 20px;
         /* Отступы внутри ссылок */
@@ -465,8 +437,67 @@ body.lock-scroll {
         margin: 0;
     }
 
+    .dropdown-menu:hover .dropdown-content li {
+        background-color: transparent;
+    }
+
+    /* Убираем акцент на активных элементах */
+    .site-navigation li.active>a {
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    /* Убираем поворот стрелок в выпадающих списках */
+    .site-navigation li:hover>.dropdown-menu::after,
+    .site-navigation li:focus>.dropdown-menu::after,
+    .site-navigation li.active>.dropdown-menu::after {
+        transform: rotate(0deg);
+        /* Убираем поворот */
+    }
+
+    .dropdown-menu::after {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+
+
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
+        background-color: transparent;
+    }
+
+    .site-navigation li.active>a {
+        background-color: transparent;
+        border-radius: 8px;
+    }
+
+    .dropdown-menu:hover .dropdown-content li {
+        background-color: transparent;
+    }
+
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
+        background-color: transparent;
+    }
+
+    .site-navigation a:hover,
+    .site-navigation a:focus {
+        background-color: transparent;
+        border-radius: 0px;
+    }
+
+    .active {
+        background-color: transparent;
+        border-radius: 0px;
+
+    }
+
     .dropdown-line {
         display: none;
+    }
+
+    .site-navigation.open {
+        top: 0;
     }
 }
 
