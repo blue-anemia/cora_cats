@@ -45,6 +45,13 @@ body {
     min-height: 100vh;
 }
 
+/* это настройка для цветопередачи градиента для сафари, как на хроме*/
+@media (color-gamut: sRGB) {
+    body {
+        background: linear-gradient(to bottom, #743B8A 0%, #D4B3E0 40%, #748D27 100%);
+    }
+}
+
 /* Мобильные размеры текста */
 @media (max-width: 991px) {
     body {
