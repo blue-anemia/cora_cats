@@ -70,6 +70,9 @@ body {
       #d4b3e0 40%,
       #748d27 100%
     );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
 }
 
@@ -939,7 +942,7 @@ body.lock-scroll {
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: $btn-text-color;
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -1223,7 +1226,7 @@ body.lock-scroll {
     /* Центрируем кнопки и добавляем вертикальные отступы */
     padding: 12px 24px;
     font-size: 16px;
-    color: #fff;
+    color: $btn-text-color;
     background-color: $btn-bg-color;
     border-radius: 5px;
     text-decoration: none;
@@ -1585,7 +1588,7 @@ body.lock-scroll {
   /* Центрируем кнопку */
   padding: 15px;
   font-size: 16px;
-  color: #fff;
+  color: $btn-text-color;
   background-color: $btn-bg-color;
   border-radius: 5px;
   text-decoration: none;
@@ -1690,7 +1693,7 @@ body.lock-scroll {
 
 .tab-button.active {
   background: $btn-bg-color;
-  color: white;
+  color: $btn-text-color;
 }
 
 .tab-content {
@@ -2648,7 +2651,7 @@ body.no-scroll {
   padding: 12px 24px;
   font-size: 16px;
   background-color: $btn-bg-color;
-  color: #fff;
+  color: $btn-text-color;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
