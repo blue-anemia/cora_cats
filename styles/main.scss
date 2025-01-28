@@ -62,20 +62,6 @@ body {
   min-height: 100vh;
 }
 
-@supports (-webkit-touch-callout: none) {
-  body {
-    background: linear-gradient(
-      to bottom,
-      #743b8a 0%,
-      #d4b3e0 40%,
-      #748d27 100%
-    );
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
-}
-
 /* Мобильные размеры текста */
 @media (max-width: 991px) {
   body {
