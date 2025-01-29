@@ -2152,6 +2152,20 @@ body.no-scroll {
   color: #333;
 }
 
+@media (max-width: 1024px) {
+  .close {
+    font-size: 24px; /* Уменьшаем размер */
+    top: 5px; /* Поднимаем немного выше */
+    right: 10px; /* Прижимаем ближе к краю */
+  }
+}
+@media (max-width: 768px) {
+  .close {
+    font-size: 20px; /* Еще меньше на мобильных */
+    top: 5px;
+    right: 8px;
+  }
+}
 /* Слайдер */
 .slider {
   position: relative;
