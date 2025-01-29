@@ -2147,17 +2147,6 @@ body.lock-scroll {
 }
 
 /* Оформление страницы Котобайки */
-/* Контейнер для всех секций с заголовками */
-.stories-section h2 {
-  color: white;
-  text-align: center;
-  text-shadow: 1px -2px 3px black;
-  font-size: 2em;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
 /* Грид-контейнер для статей */
 .story-container {
   display: grid;
@@ -2306,6 +2295,7 @@ body.no-scroll {
   overflow: hidden;
 }
 
+//закрытие модалки статьи
 .close {
   position: absolute;
   top: 10px;
@@ -2410,6 +2400,24 @@ body.no-scroll {
   }
 }
 
+//Табы для котобаек
+.story-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 таба в строке */
+  margin-bottom: 0;
+  background: #f4f4f4;
+  border-bottom: 2px solid #ddd;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  gap: 10px;
+  justify-items: center; /* Центрируем табы внутри ячеек */
+}
+
+@media (max-width: 480px) {
+  .story-tabs {
+    grid-template-columns: repeat(2, 1fr); /* Две колонки, если табов много */
+  }
+}
 /* Конец оформления Котобайки */
 
 /* оформление кнопки якоря наверх */

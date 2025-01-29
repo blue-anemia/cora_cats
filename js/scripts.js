@@ -198,14 +198,49 @@ document.addEventListener("click", function (event) {
   });
 });
 
-//Переключение вкладок в котошмоте
-function showCategory(category) {
-  document.querySelectorAll(".tab-content").forEach((content) => {
+// Универсальная функция для переключения вкладок
+function toggleTab(event, tabId) {
+  // Скрываем все вкладки на странице
+  const tabContents = event.target.closest('.tabs-wrapper').querySelectorAll(".tab-content");
+  tabContents.forEach(content => {
     content.classList.remove("active");
   });
-  document.querySelectorAll(".tab-button").forEach((button) => {
+
+  // Убираем активный класс у всех кнопок вкладок
+  const buttons = event.target.closest('.tabs-wrapper').querySelectorAll(".tab-button");
+  buttons.forEach(button => {
     button.classList.remove("active");
   });
-  document.getElementById(category).classList.add("active");
-  event.target.classList.add("active");
+
+  // Показываем вкладку с данным id
+  const activeTab = document.getElementById(tabId);
+  if (activeTab) {
+    activeTab.classList.add("active");
+  }
+
+  // Делаем активной нажатую кнопку
+  event.currentTarget.classList.add("active");
 }
+
+// Устанавливаем активную вкладку при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  // Для каждой группы вкладок на странице
+  document.querySelectorAll('.tabs-wrapper').forEach(wrapper => {
+    // Находим активную вкладку в каждом контейнере
+    const defaultTab = wrapper.querySelector(".tab-button.active");
+    if (defaultTab) {
+      toggleTab(
+        { currentTarget: defaultTab },
+        defaultTab.getAttribute("data-tab")
+      );
+    }
+  });
+});
+
+// Привязываем события к кнопкам вкладок
+document.querySelectorAll('.tab-button').forEach(button => {
+  button.addEventListener('click', function (event) {
+    const tabId = this.getAttribute('data-tab');
+    toggleTab(event, tabId);
+  });
+});
