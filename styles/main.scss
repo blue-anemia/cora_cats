@@ -521,11 +521,11 @@ body.lock-scroll {
   margin: 0;
   margin-bottom: 20px;
   list-style: none;
-  color: black;
+  color: #2f4f4f;
 }
 
 .breadcrumbs a {
-  color: #000;
+  color: #2f4f4f;
 }
 
 .breadcrumbs a:hover,
@@ -2222,7 +2222,7 @@ body.lock-scroll {
   padding: 10px 20px;
   font-size: 1em;
   font-weight: bold;
-  color: #ffffff;
+  color: $btn-text-color;
   background-color: $btn-bg-color;
   border: none;
   border-radius: 5px;
@@ -2231,8 +2231,8 @@ body.lock-scroll {
   transition: background-color 0.3s, box-shadow 0.3s;
   margin-top: auto;
   /* Выравниваем кнопку в нижней части карточки */
-  align-self: flex-start;
-  /* Прижимаем кнопку влево */
+  margin: 0 auto;
+  /* Прижимаем кнопку по центру */
 }
 
 .read-more-btn:hover {
