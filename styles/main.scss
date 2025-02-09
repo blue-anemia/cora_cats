@@ -958,12 +958,17 @@ body.lock-scroll {
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
   .my-cats-carousel {
-    max-width: 100%;
+    width: 90%;
+    /* Уменьшаем фото, чтобы оно не выходило за пределы */
+    max-width: 450px;
   }
 
   .carousel-button {
     width: 30px;
     height: 30px;
+  }
+  .carousel-images {
+    align-items: center; /* Все фото одной высоты */
   }
 }
 
@@ -1011,7 +1016,7 @@ body.lock-scroll {
 @media (max-width: 768px) {
   .take-cat-container {
     padding: 20px;
-    text-align: center;
+    text-align: left;
   }
 
   .take-cat-list {
