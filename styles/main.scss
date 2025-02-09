@@ -315,8 +315,8 @@ body.lock-scroll {
 .burger-menu {
   display: none;
   position: absolute;
-  left: 16px;
-  /* Размещаем кнопку слева */
+  right: 16px;
+  /* Размещаем кнопку справа */
   top: 16px;
   border: none;
   background: transparent;
@@ -396,9 +396,8 @@ body.lock-scroll {
     transition: left 0.3s ease;
     padding: 0;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /* Выравниваем меню по левому краю */
     justify-content: space-evenly;
-    /* Выравниваем меню по левому краю */
     z-index: 2;
     overflow-y: auto;
   }
@@ -441,7 +440,9 @@ body.lock-scroll {
     border-bottom: none;
     /* Убираем разделитель у последнего пункта */
   }
-
+  .dropdown-menu::after {
+    content: none; /* Убираем стрелочку у пунктов меню */
+  }
   .site-navigation li .dropdown-content {
     display: block;
     position: static;
@@ -481,7 +482,7 @@ body.lock-scroll {
 
   .site-navigation li.active > a {
     background-color: transparent;
-    border-radius: 8px;
+    border-radius: 0px;
   }
 
   .dropdown-menu:hover .dropdown-content li {
