@@ -14,9 +14,9 @@ jobs:
         uses: appleboy/ssh-action@v1
         with:
           host: vh450.timeweb.ru
-          username: ${{ secrets.TIMEWEB_SSH_USER }}
+          username: ch73371
           password: ${{ secrets.TIMEWEB_SSH_PASSWORD }}
-          port: 2222
+          port: 22
           script: |
             cd ~/public_html  # или другая папка сайта
             git fetch origin
