@@ -1,0 +1,26 @@
+name: Deploy to TimeWeb via SSH
+on:
+  push:
+    branches: [ main ]  # запускать только при пуше в main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: hosting.timeweb.ru
+          username: ${{ secrets.TIMEWEB_SSH_USER }}
+          password: ${{ secrets.TIMEWEB_SSH_PASSWORD }}
+          port: 2222
+          script: |
+            cd ~/public_html  # или другая папка сайта
+            git fetch origin
+            git reset --hard origin/main
+            # Дополнительные команды (если нужно):
+            # composer install
+            # npm run build
