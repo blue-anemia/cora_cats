@@ -1,7 +1,7 @@
 name: Deploy to TimeWeb via SSH
 on:
   push:
-    branches: [ main ]  # запускать только при пуше в main
+    branches: [main] # запускать только при пуше в main
 
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1
         with:
-          host: hosting.timeweb.ru
+          host: vh450.timeweb.ru
           username: ${{ secrets.TIMEWEB_SSH_USER }}
           password: ${{ secrets.TIMEWEB_SSH_PASSWORD }}
           port: 2222
