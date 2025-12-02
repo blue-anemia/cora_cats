@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* Цвет ховера кнопки */
 /* Цвет текста на кнопке */
 /* Цвет ссылок */
@@ -7,6 +8,7 @@
   font-family: "Plovdiv Display";
   src: url("../fonts/Plovdiv.ttf");
 }
+
 a {
   text-decoration: none;
 }
@@ -51,11 +53,13 @@ body {
     font-size: 16px;
   }
 }
+
 @media (max-width: 576px) {
   body {
     font-size: 14px;
   }
 }
+
 /* Универсальные стили */
 *,
 *::before,
@@ -83,6 +87,7 @@ body {
     padding: 15px 10px;
   }
 }
+
 .page-title {
   color: #333333;
 }
@@ -101,21 +106,25 @@ body {
     max-width: 540px;
   }
 }
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
   }
 }
+
 @media (min-width: 1500px) {
   .container {
     max-width: 1480px;
@@ -123,6 +132,7 @@ body {
     padding-left: 0;
   }
 }
+
 .header-menu-wrapper {
   width: 100%;
   display: flex;
@@ -260,15 +270,15 @@ body.lock-scroll {
 }
 
 /* Показать выпадающее меню при наведении курсора */
-.site-navigation li:hover > .dropdown-content,
-.site-navigation li:focus > .dropdown-content {
+.site-navigation li:hover>.dropdown-content,
+.site-navigation li:focus>.dropdown-content {
   display: block;
 }
 
 /* Изменение направления стрелки при раскрытии меню */
-.site-navigation li:hover > .dropdown-menu::after,
-.site-navigation li:focus > .dropdown-menu::after,
-.site-navigation li.active > .dropdown-menu::after {
+.site-navigation li:hover>.dropdown-menu::after,
+.site-navigation li:focus>.dropdown-menu::after,
+.site-navigation li.active>.dropdown-menu::after {
   /* Добавлен активный класс */
   transform: rotate(-135deg);
   /* Поворот на 180 градусов */
@@ -280,7 +290,7 @@ body.lock-scroll {
 }
 
 /* Стили для активного состояния */
-.site-navigation li.active > a {
+.site-navigation li.active>a {
   background-color: #d7cee1;
   border-radius: 8px;
 }
@@ -345,15 +355,18 @@ body.lock-scroll {
   .burger-menu {
     display: block;
   }
+
   .header-logo {
     display: block;
     position: relative;
     margin: 0 auto;
   }
+
   .site-navigation.open .header-logo {
     display: none;
     /* Не показывать логотип, когда меню открыто */
   }
+
   .site-navigation {
     display: flex;
     /* Меню скрыто по умолчанию */
@@ -366,28 +379,33 @@ body.lock-scroll {
     transition: left 0.3s ease;
     padding: 0;
     flex-direction: column;
-    align-items: flex-start; /* Выравниваем меню по левому краю */
+    align-items: flex-start;
+    /* Выравниваем меню по левому краю */
     justify-content: space-evenly;
     z-index: 2;
     overflow-y: auto;
   }
+
   .site-navigation.open {
     left: 0;
     /* Выезд меню */
     top: 0;
   }
+
   .site-navigation ul {
     width: 100%;
     padding: 0;
     padding-left: 10px;
     margin: 0;
   }
+
   .site-navigation ul li {
     width: 100%;
     margin: 0;
     padding: 0;
     padding-left: 10px;
   }
+
   .site-navigation ul li a {
     display: block;
     text-align: left;
@@ -401,13 +419,17 @@ body.lock-scroll {
     box-sizing: border-box;
     /* Учитываем padding в ширине */
   }
+
   .site-navigation ul li:last-child a {
     border-bottom: none;
     /* Убираем разделитель у последнего пункта */
   }
+
   .dropdown-menu::after {
-    content: none; /* Убираем стрелочку у пунктов меню */
+    content: none;
+    /* Убираем стрелочку у пунктов меню */
   }
+
   .site-navigation li .dropdown-content {
     display: block;
     position: static;
@@ -416,56 +438,69 @@ body.lock-scroll {
     padding: 0;
     margin: 0;
   }
+
   .dropdown-menu:hover .dropdown-content li {
     background-color: transparent;
   }
+
   /* Убираем акцент на активных элементах */
-  .site-navigation li.active > a {
+  .site-navigation li.active>a {
     background-color: transparent;
     border-radius: 0;
   }
+
   /* Убираем поворот стрелок в выпадающих списках */
-  .site-navigation li:hover > .dropdown-menu::after,
-  .site-navigation li:focus > .dropdown-menu::after,
-  .site-navigation li.active > .dropdown-menu::after {
+  .site-navigation li:hover>.dropdown-menu::after,
+  .site-navigation li:focus>.dropdown-menu::after,
+  .site-navigation li.active>.dropdown-menu::after {
     transform: rotate(0deg);
     /* Убираем поворот */
   }
+
   .dropdown-menu::after {
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
   }
+
   .dropdown-content a:hover,
   .dropdown-content a:focus {
     background-color: transparent;
   }
-  .site-navigation li.active > a {
+
+  .site-navigation li.active>a {
     background-color: transparent;
     border-radius: 0px;
   }
+
   .dropdown-menu:hover .dropdown-content li {
     background-color: transparent;
   }
+
   .dropdown-content a:hover,
   .dropdown-content a:focus {
     background-color: transparent;
   }
+
   .site-navigation a:hover,
   .site-navigation a:focus {
     background-color: transparent;
     border-radius: 0px;
   }
+
   .active {
     background-color: transparent;
     border-radius: 0px;
   }
+
   .dropdown-line {
     display: none;
   }
+
   .site-navigation.open {
     top: 0;
   }
 }
+
 .breadcrumbs {
   display: flex;
   justify-content: flex-start;
@@ -607,24 +642,28 @@ body.lock-scroll {
     justify-content: center;
     /* Центрируем содержимое */
   }
+
   .home-about-me-text {
     font-size: 140%;
     /* Уменьшаем текст немного */
     max-width: 700px;
     /* Чуть увеличиваем макс. ширину текста */
   }
+
   .home-cora-photo {
     width: 90%;
     /* Уменьшаем фото, чтобы оно не выходило за пределы */
     max-width: 450px;
   }
 }
+
 @media (max-width: 998px) {
   .home-intro {
     flex-direction: column;
     /* Перестраиваем элементы в столбец */
     align-items: center;
   }
+
   .home-about-me-text {
     font-size: 120%;
     /* Уменьшаем размер текста */
@@ -633,6 +672,7 @@ body.lock-scroll {
     text-align: center;
     /* Центрируем текст */
   }
+
   .home-cora-photo {
     width: 90%;
     /* Занимаем 90% доступной ширины */
@@ -640,21 +680,25 @@ body.lock-scroll {
     /* Снимаем ограничение */
   }
 }
+
 @media (max-width: 768px) {
   .home-intro {
     flex-direction: column;
     align-items: center;
   }
+
   .home-about-me-text {
     font-size: 100%;
     /* Уменьшаем размер текста для мобильной версии */
     max-width: 100%;
     text-align: center;
   }
+
   .home-cora-photo {
     width: 80%;
     margin: 10px 0;
   }
+
   .home-cora-more {
     font-size: 90%;
     /* Чуть меньше шрифт для раскрывающегося текста */
@@ -662,6 +706,7 @@ body.lock-scroll {
     padding-right: 15px;
   }
 }
+
 .my-activity {
   color: white;
   text-align: center;
@@ -687,6 +732,7 @@ body.lock-scroll {
     grid-template-columns: repeat(2, 1fr);
     /* Две колонки */
   }
+
   .about-me-item:nth-child(3) {
     grid-column: span 2;
     /* Третья карточка занимает всю строку */
@@ -694,17 +740,20 @@ body.lock-scroll {
     /* Центрируем карточку */
   }
 }
+
 /* Адаптация для мобильных (до 768px) */
 @media (max-width: 768px) {
   .about-me-list {
     grid-template-columns: 1fr;
     /* Одна колонка */
   }
+
   .about-me-item:nth-child(3) {
     grid-column: auto;
     /* Убираем дополнительные свойства */
   }
 }
+
 .about-me-item {
   list-style: none;
   padding: 20px;
@@ -768,7 +817,7 @@ body.lock-scroll {
   margin-bottom: 30px;
 }
 
-.my-cats-section + .my-cats-section {
+.my-cats-section+.my-cats-section {
   margin-top: 30px;
   /* Отступ между блоками */
   padding-top: 30px;
@@ -784,6 +833,16 @@ body.lock-scroll {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-cats a {
+  color: #6a1b9a;
+  font-weight: bold;
+}
+
+.my-cats a:hover {
+  color: #388e3c;
+  text-decoration: underline;
 }
 
 .button-more summary {
@@ -804,15 +863,18 @@ body.lock-scroll {
     display: block;
     /* Обеспечиваем доступность блока */
   }
+
   .button-more summary {
     display: none;
     /* Прячем кнопку "Подробнее" */
   }
+
   .button-more p {
     display: block;
     /* Показываем весь текст */
   }
 }
+
 /* Мобильные устройства: показываем кнопку, но скрываем текст */
 @media (max-width: 768px) {
   .button-more summary {
@@ -821,15 +883,18 @@ body.lock-scroll {
     cursor: pointer;
     font-weight: bold;
   }
+
   .button-more:not([open]) p {
     display: none;
     /* Прячем текст, если блок не раскрыт */
   }
+
   .button-more[open] p {
     display: block;
     /* Показываем текст при раскрытии */
   }
 }
+
 .my-cats-carousel {
   position: relative;
   display: flex;
@@ -891,14 +956,18 @@ body.lock-scroll {
     /* Уменьшаем фото, чтобы оно не выходило за пределы */
     max-width: 450px;
   }
+
   .carousel-button {
     width: 30px;
     height: 30px;
   }
+
   .carousel-images {
-    align-items: center; /* Все фото одной высоты */
+    align-items: center;
+    /* Все фото одной высоты */
   }
 }
+
 .take-cat h2 {
   color: white;
   text-align: center;
@@ -944,20 +1013,24 @@ body.lock-scroll {
     padding: 20px;
     text-align: left;
   }
+
   .take-cat-list {
     text-align: left;
     /* Список остается выровненным по левому краю */
   }
+
   .take-cat h2 {
     font-size: 1.5rem;
     /* Уменьшаем заголовок */
     margin: 20px 0;
   }
+
   .take-cat p,
   .take-cat a {
     font-size: 1rem;
   }
 }
+
 /* здесь стилизую заголовок-слоган для внутренних страниц */
 .big-heading {
   display: flex;
@@ -998,6 +1071,7 @@ body.lock-scroll {
     margin-top: 40px;
     margin-bottom: 50px;
   }
+
   .big-heading::before,
   .big-heading::after {
     width: 30px;
@@ -1006,6 +1080,7 @@ body.lock-scroll {
     margin-left: 15px;
   }
 }
+
 @media (max-width: 576px) {
   .big-heading {
     font-size: 28px;
@@ -1013,6 +1088,7 @@ body.lock-scroll {
     margin-top: 30px;
     margin-bottom: 40px;
   }
+
   .big-heading::before,
   .big-heading::after {
     width: 20px;
@@ -1021,6 +1097,7 @@ body.lock-scroll {
     margin-left: 10px;
   }
 }
+
 /* конец стилизации слогана */
 /* Стилизация внутренних страниц*/
 .info-container {
@@ -1096,19 +1173,22 @@ body.lock-scroll {
     flex-direction: column;
     align-items: center;
   }
+
   .inner-page-photo {
     max-width: 100%;
     /* Фото растягивается на всю ширину */
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
     border-radius: 10px;
   }
+
   .page-info {
     font-size: 14px;
     line-height: 1.4;
     padding: 0 15px;
     text-align: justify;
   }
+
   .pdf-download {
     text-align: center;
     margin-top: 20px;
@@ -1116,6 +1196,7 @@ body.lock-scroll {
     display: block;
     /* Блочный элемент для контейнера кнопки */
   }
+
   .pdf-button {
     display: block;
     /* Блочный элемент для кнопок */
@@ -1132,12 +1213,14 @@ body.lock-scroll {
     transition: background-color 0.3s;
     text-align: center;
   }
+
   .text-content .pdf-download {
     display: block;
     /* Убедимся, что контейнер блоковый */
     text-align: center;
     /* Центрируем дочерние элементы */
   }
+
   .text-content .pdf-button {
     display: inline-block;
     /* Кнопка все еще будет блочной */
@@ -1145,12 +1228,14 @@ body.lock-scroll {
     /* Центрируем кнопку */
   }
 }
+
 /* Стили для планшетов (от 768px до 993px) */
 @media (max-width: 993px) {
   .info-container {
     flex-wrap: wrap;
     gap: 20px;
   }
+
   .page-info {
     flex: none;
     width: 100%;
@@ -1159,17 +1244,20 @@ body.lock-scroll {
     padding: 0 10px;
     text-align: justify;
   }
+
   .inner-page-photo {
     max-width: 300px;
     height: auto;
     max-height: 250px;
   }
+
   .pdf-download {
     text-align: center;
     margin-top: 20px;
     display: block;
     width: 100%;
   }
+
   .pdf-button {
     display: block;
     width: 90%;
@@ -1178,6 +1266,7 @@ body.lock-scroll {
     padding: 12px 24px;
   }
 }
+
 /* Стили для десктопа (от 993px до 1500px) */
 @media (min-width: 993px) and (max-width: 1500px) {
   .info-container {
@@ -1186,26 +1275,31 @@ body.lock-scroll {
     align-items: center;
     gap: 30px;
   }
+
   .page-info {
     flex: none;
     width: 65%;
     text-align: left;
   }
+
   .inner-page-photo {
     max-width: 400px;
     height: auto;
     flex-shrink: 0;
     max-height: 300px;
   }
+
   .pdf-download {
     text-align: center;
     margin-top: 20px;
   }
+
   .pdf-button {
     width: 200px;
     display: inline-block;
   }
 }
+
 /* Страница "Поддержать" */
 .inner-columns {
   display: flex;
@@ -1367,6 +1461,7 @@ body.lock-scroll {
     flex-wrap: wrap;
     /* Позволяем элементам переноситься */
   }
+
   .kotovodstvo-photo {
     max-width: 300px;
     /* Уменьшаем максимальную ширину фото */
@@ -1375,6 +1470,7 @@ body.lock-scroll {
     margin: 0 auto;
     /* Центрируем фото */
   }
+
   .kotovodstvo-text,
   .kotovodstvo-info {
     flex: 1 1 calc(50% - 40px);
@@ -1383,15 +1479,18 @@ body.lock-scroll {
     /* Учитываем padding */
   }
 }
+
 @media (max-width: 768px) {
   .info-container {
     flex-direction: column;
     text-align: center;
   }
+
   .kotovodstvo-photo {
     max-width: 100%;
     margin: 0 auto;
   }
+
   .kotovodstvo-text,
   .kotovodstvo-info {
     flex: 1 1 100%;
@@ -1399,6 +1498,7 @@ body.lock-scroll {
     width: 100%;
   }
 }
+
 .kotovodstvo-container {
   margin: 0;
   margin-top: 30px;
@@ -1498,26 +1598,31 @@ body.lock-scroll {
     padding: 20px;
     /* Добавим внутренние отступы */
   }
+
   .important-points {
     padding: 10px;
     /* Уменьшим отступы на мобильных */
   }
+
   .important-points ul {
     list-style-type: disc;
     padding-left: 30px;
     /* Выравниваем маркеры списка */
   }
+
   .important-points li {
     margin-bottom: 10px;
     text-align: left;
     /* Сохраняем текст выровненным влево */
   }
+
   .lection-text,
   .presentation-text {
     font-size: 1.4em;
     /* Уменьшаем размер текста */
     margin-top: 20px;
   }
+
   .video-lection iframe {
     width: 100%;
     height: auto;
@@ -1525,6 +1630,7 @@ body.lock-scroll {
     /* Убедимся, что iframe не выходит за пределы контейнера */
   }
 }
+
 /* конец стилизации страницы "Котоводство"*/
 /* Начало стилизации страницы "Котошмот" */
 .tabs-wrapper {
@@ -1608,6 +1714,7 @@ body.lock-scroll {
     /* Уменьшаем отступы */
   }
 }
+
 /* Для мобильных устройств (разрешение до 768px) */
 @media (max-width: 768px) {
   .category-description {
@@ -1617,6 +1724,7 @@ body.lock-scroll {
     /* Еще меньше отступы */
   }
 }
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1645,7 +1753,7 @@ body.lock-scroll {
   height: 150px;
   /* Ограничиваем высоту изображения */
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   /* Сохраняем пропорции изображения */
   border-radius: 10px;
 }
@@ -1687,6 +1795,7 @@ body.lock-scroll {
     /* 5 табов на экранах от 1500px до 768px */
   }
 }
+
 /* Адаптивность для планшетов */
 @media (max-width: 768px) {
   .tabs {
@@ -1697,6 +1806,7 @@ body.lock-scroll {
     gap: 5px;
     /* Уменьшаем отступы между табами */
   }
+
   .tab-button {
     font-size: 14px;
     /* Уменьшаем размер шрифта на экранах от 768px до 481px */
@@ -1707,27 +1817,33 @@ body.lock-scroll {
     word-wrap: break-word;
     /* Переносим длинные слова на следующую строку */
   }
+
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
     /* Уменьшаем расстояние между карточками */
   }
+
   .product-card {
     height: 350px;
     /* Уменьшаем высоту карточек */
   }
+
   .product-card img {
     height: 120px;
     /* Уменьшаем высоту изображений */
   }
+
   .product-card h3 {
     font-size: 16px;
     /* Слегка уменьшаем текст */
   }
+
   .product-card p {
     font-size: 13px;
   }
 }
+
 @media (max-width: 600px) {
   .tabs {
     grid-template-columns: repeat(3, 1fr);
@@ -1735,6 +1851,7 @@ body.lock-scroll {
     gap: 8px;
     /* Добавляем небольшие отступы */
   }
+
   .tab-button {
     font-size: 12px;
     /* Уменьшаем размер шрифта для этих экранов */
@@ -1742,6 +1859,7 @@ body.lock-scroll {
     /* Уменьшаем отступы */
   }
 }
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 480px) {
   .tabs {
@@ -1750,36 +1868,44 @@ body.lock-scroll {
     padding: 5px;
     /* Уменьшаем отступы */
   }
+
   .tab-button {
     font-size: 14px;
     /* Уменьшаем шрифт на маленьких экранах */
   }
+
   .product-grid {
     grid-template-columns: 1fr;
     /* Одна карточка на строку */
     gap: 10px;
   }
+
   .product-card {
     height: auto;
     /* Автоматическая высота для компактности */
     padding: 10px;
   }
+
   .product-card img {
     height: 100px;
     /* Еще меньше изображений */
   }
+
   .product-card h3 {
     font-size: 14px;
   }
+
   .product-card p {
     font-size: 12px;
   }
+
   .product-link {
     padding: 8px 12px;
     /* Компактная кнопка */
     font-size: 14px;
   }
 }
+
 /* Конец стилизации страницы "Котошмот" */
 /* Начало стилизации страницы "Потеряли кота" */
 .article-container a {
@@ -1828,15 +1954,18 @@ body.lock-scroll {
     margin-right: 0;
     /* Убираем смещение вправо */
   }
+
   .content-list {
     font-size: 1rem;
     /* Уменьшаем размер шрифта для мобильных устройств */
   }
+
   .page-content-nav h2 {
     font-size: 1.1rem;
     /* Уменьшаем размер шрифта для мобильных устройств */
   }
 }
+
 .content-list li {
   margin-bottom: 15px;
 }
@@ -1908,42 +2037,50 @@ body.lock-scroll {
     text-align: left;
     /* Выравнивание текста по левому краю */
   }
+
   .article-container h2 {
     font-size: 18px;
     /* Меньший размер заголовков */
   }
+
   .article-container h3 {
     font-size: 16px;
     /* Меньший размер подзаголовков */
   }
+
   .article-container {
     font-size: 14px;
     /* Меньший размер текста */
     text-align: left;
     /* Текст не по центру */
   }
+
   .article-container ul,
   .article-container ol {
     margin-left: 20px;
     /* Отступ слева для списков */
   }
+
   .article-container ol,
   .article-container ul {
     padding-left: 0;
     /* Убираем отступ слева */
   }
+
   .article-container ol {
     line-height: 1.6;
     /* Увеличиваем межстрочный интервал */
     margin-bottom: 10px;
     /* Отступ между списками */
   }
+
   .article-container ol,
   .article-container li {
     margin-bottom: 8px;
     /* Отступы между пунктами списка */
   }
 }
+
 @media screen and (max-width: 1000px) and (min-width: 769px) {
   .article-container {
     font-size: 15px;
@@ -1951,36 +2088,43 @@ body.lock-scroll {
     text-align: left;
     /* Выравнивание текста по левому краю */
   }
+
   .article-container h2 {
     font-size: 20px;
     /* Меньший размер заголовков */
   }
+
   .article-container h3 {
     font-size: 18px;
     /* Меньший размер подзаголовков */
   }
+
   .article-container ul,
   .article-container ol {
     margin-left: 20px;
     /* Отступ слева для списков */
   }
+
   .article-container ol,
   .article-container ul {
     padding-left: 0;
     /* Убираем отступ слева */
   }
+
   .article-container ol {
     line-height: 1.6;
     /* Увеличиваем межстрочный интервал */
     margin-bottom: 10px;
     /* Отступ между списками */
   }
+
   .article-container ol,
   .article-container li {
     margin-bottom: 8px;
     /* Отступы между пунктами списка */
   }
 }
+
 /*Начало стилизации "Пиар и пристройство*/
 .inner-page-text {
   padding-top: 30px;
@@ -2027,7 +2171,7 @@ body.lock-scroll {
   height: 400px;
   /* Устанавливаем максимальную высоту */
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   /* Сохраняем пропорции и обрезаем лишнее */
   border-bottom: 3px solid #ddd;
 }
@@ -2120,7 +2264,7 @@ body.lock-scroll {
   max-height: 80vh;
   /* Ограничиваем высоту фото относительно экрана */
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   /* Фото адаптируется под контейнер, сохраняя пропорции */
 }
 
@@ -2150,18 +2294,24 @@ body.no-scroll {
 
 @media (max-width: 1024px) {
   .close {
-    font-size: 24px; /* Уменьшаем размер */
-    top: 5px; /* Поднимаем немного выше */
-    right: 10px; /* Прижимаем ближе к краю */
+    font-size: 24px;
+    /* Уменьшаем размер */
+    top: 5px;
+    /* Поднимаем немного выше */
+    right: 10px;
+    /* Прижимаем ближе к краю */
   }
 }
+
 @media (max-width: 768px) {
   .close {
-    font-size: 20px; /* Еще меньше на мобильных */
+    font-size: 20px;
+    /* Еще меньше на мобильных */
     top: 5px;
     right: 8px;
   }
 }
+
 /* Слайдер */
 .slider {
   position: relative;
@@ -2188,8 +2338,8 @@ body.no-scroll {
   transition: 0.3s;
   border-radius: 3px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -2235,29 +2385,35 @@ body.no-scroll {
     /* Две колонки */
   }
 }
+
 @media (max-width: 600px) {
   .story-container {
     grid-template-columns: 1fr;
     /* Одна колонка */
   }
 }
+
 .story-tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 таба в строке */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 таба в строке */
   margin-bottom: 0;
   background: #f4f4f4;
   border-bottom: 2px solid #ddd;
   padding: 10px;
   border-radius: 10px 10px 0 0;
   gap: 10px;
-  justify-items: center; /* Центрируем табы внутри ячеек */
+  justify-items: center;
+  /* Центрируем табы внутри ячеек */
 }
 
 @media (max-width: 480px) {
   .story-tabs {
-    grid-template-columns: repeat(2, 1fr); /* Две колонки, если табов много */
+    grid-template-columns: repeat(2, 1fr);
+    /* Две колонки, если табов много */
   }
 }
+
 /* Конец оформления Котобайки */
 /* оформление кнопки якоря наверх */
 .scroll-to-top {
@@ -2298,11 +2454,13 @@ body.no-scroll {
     font-size: 14px;
   }
 }
+
 @media (max-width: 576px) {
   .main-footer {
     font-size: 12px;
   }
 }
+
 .main-footer a {
   color: #451266;
   text-decoration: none;
@@ -2439,6 +2597,7 @@ body.no-scroll {
     align-items: center;
     text-align: center;
   }
+
   .footer-info,
   .footer-social,
   .footer-copyright {
@@ -2447,10 +2606,12 @@ body.no-scroll {
     margin-bottom: 20px;
     /* Отступы между секциями */
   }
+
   .footer-social ul {
     justify-content: center;
   }
 }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -2460,7 +2621,7 @@ body.no-scroll {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -2510,4 +2671,6 @@ body.no-scroll {
   /* Размер изображения будет составлять 18% от ширины родительского блока */
   height: auto;
   /* Высота будет автоматически пропорциональна ширине */
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
